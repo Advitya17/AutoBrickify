@@ -19,3 +19,4 @@ TODO
 
 ### Questions to consider (TODO: remove later!)
 1. What should the data ingestion pipeline look like? (Lectures/TAs/AF)
+2. To what extent can we use their repo for result replication?
