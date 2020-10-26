@@ -1,7 +1,7 @@
 # Zonal Air Handling Replication Project
 
-## Purpose
+## Purpose of the offered implementation
 
-## Content
+## Contents
 
 ## How to run it
