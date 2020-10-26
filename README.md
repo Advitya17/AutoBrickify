@@ -3,6 +3,8 @@
 ## Purpose of the offered implementation
 Programming a HVAC system to measure and change airflow rates from maximum to minimum and monitor the CO2 Density and Relative Humidity in a classroom and a conference room inside the EBU3B (CSE) building at UC San Diego.
 
+Currently it only supports a rudimentary data ingestion component, as per the purposes of checkpoint-1.
+
 ## Contents
 The current contents of this repository include:
 1. A rudimentary data ingestion pipeline
