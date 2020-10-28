@@ -6,11 +6,11 @@ Programming a HVAC system to measure and change airflow rates from maximum to mi
 Currently it only supports a rudimentary data ingestion component, as per the purposes of Checkpoint-1.
 
 ## Contents
-The current contents of this repository include:
-1. A rudimentary data ingestion pipeline
+The current contents of this rudimentary data ingestion pipeline include:
+1. ETL function (./src/etl.py)
 2. Documentation (as shown here)
 3. The main runnable python script (`run.py`)
-4. Params file (`data-params.json`)
+4. Params file (`./config/data-params.json`)
 
 ## How to run it
 
