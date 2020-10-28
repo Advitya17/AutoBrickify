@@ -16,15 +16,16 @@ from datetime import timedelta
 from cycler import cycler
 
 sys.path.append('../building_depot')
+sys.path.append('../config')
 
 # load config
-config = json.load(open('config.json'))
+config = json.load(open('data-params.json')) # '../data-params.json'
 cse_dataservice_url = config["cse_dataservice_url"]
 bd_username = config["bd_username"]
 bd_api_key = config["bd_api_key"]
-session_length = config["session_length"] # not used so far
+# session_length = config["session_length"] # not used so far
 remote_sensors = config["remote_sensors"]
-local_sensors = config["local_sensors"] # not used so far
+# local_sensors = config["local_sensors"] # not used so far
 actuation_target_sensor = config["actuation_target_sensor"]
 
 #Connect with BuildingDepot
