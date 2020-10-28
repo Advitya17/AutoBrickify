@@ -7,7 +7,7 @@ Currently it only supports a rudimentary data ingestion component, as per the pu
 
 ## Contents
 The current contents of this rudimentary data ingestion pipeline include:
-1. ETL function (./src/etl.py)
+1. ETL function (`./src/etl.py`)
 2. Documentation (as shown here)
 3. The main runnable python script (`run.py`)
 4. Params file (`./config/data-params.json`)
