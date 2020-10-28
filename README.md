@@ -13,10 +13,9 @@ The current contents of this repository include:
 4. Params file (`data-params.json`)
 
 ## How to run it
-TODO
 
+1. Set up the environment
+`python run.py env-setup`
+
+2. Load the sensor data points
 `python run.py data`
-
-### Questions to consider (TODO: remove later!)
-1. What should the data ingestion pipeline look like? (Lectures/TAs/AF)
-2. To what extent can we use their repo for result replication? (RG/Dezhi)
