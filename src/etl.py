@@ -40,5 +40,5 @@ def load_uuid_data():
         uuids = {sensor['template']: sensor['uuid'] for sensor in resp['sensors'] if sensor['template'] in remote_sensors}
         data[room] = uuids
 
-    with open('sensor_uuids.json', 'w') as outfile:
+    with open('../sensor_uuids.json', 'w') as outfile:
         json.dump(data, outfile, indent=4)
