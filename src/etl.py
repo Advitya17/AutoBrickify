@@ -15,7 +15,6 @@ from building_depot import DataService, BDError
 from datetime import timedelta
 from cycler import cycler
 
-sys.path.append('../building_depot')
 sys.path.append('../config')
 
 # load config
