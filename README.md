@@ -15,7 +15,9 @@ The current contents of this repository include:
 ## How to run it
 
 1. Set up the environment
+
 `python run.py env-setup`
 
 2. Load the sensor data points
+
 `python run.py data`
