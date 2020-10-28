@@ -21,3 +21,6 @@ The current contents of this rudimentary data ingestion pipeline include:
 2. Load the sensor data points
 
 `python run.py data`
+
+## Questions to consider (TODO: remove later!)
+1. Do we need the references and notebooks directories (as needed in the initial methodology)?
