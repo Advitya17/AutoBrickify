@@ -16,7 +16,7 @@ from datetime import timedelta
 from cycler import cycler
 from etl import load_uuid_data
 
-sys.path.append('../src')
+sys.path.append('./src')
 
 if __name__ == "__main__":
     action = sys.argv[1]
