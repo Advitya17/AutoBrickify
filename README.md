@@ -22,6 +22,9 @@ The current contents of this rudimentary data ingestion pipeline include:
 
 `python run.py data`
 
+
+You should find `sensor_uuids.json` in the `/configs` folder and a newly fetched `/data` folder
+
 ## Questions to consider (TODO: remove later!)
 1. Do we need the references and notebooks directories (as needed in the initial methodology)?
 2. DO we also need to grab the CO2 data from Dezhi's repo?
