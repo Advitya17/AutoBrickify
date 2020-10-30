@@ -43,8 +43,9 @@ def load_uuid_data():
     with open('../sensor_uuids.json', 'w') as outfile:
         json.dump(data, outfile, indent=4)
 
-def load_co2_data():
+def load_co2_and_humidity_data():
     os.system('git clone https://gitlab.com/dzhong1989/hvac-safety-control.git')
     os.system('mv ./hvac-safety-control ../hvac-safety-control')
     os.system('mv ../hvac-safety-control/CO2_data ../CO2_data')
+    os.system('mv ../CO2_data ../data')
     os.system('rm -r ../hvac-safety-control')
