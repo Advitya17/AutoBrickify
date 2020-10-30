@@ -1,3 +1,6 @@
+# Everything except the 'load_co2_and_humidity_data' function and sys path call 
+# is taken from https://gitlab.com/dzhong1989/hvac-safety-control/-/blob/master/experiment.py
+
 import pprint
 import pdb
 import arrow
