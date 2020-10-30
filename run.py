@@ -27,6 +27,6 @@ if __name__ == "__main__":
         load_uuid_data()
         print("Sensor points data loaded in 'sensor_uuids.json'!")
         load_co2_data()
-        print("Data loaded in the 'CO2_data' directory")
+        print("CO2 and Humidity data loaded in the 'data' directory")
     else:
         print('Please specify a valid argument!')
