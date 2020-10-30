@@ -45,5 +45,5 @@ def load_uuid_data():
 
 def load_co2_data():
     os.system('git clone https://gitlab.com/dzhong1989/hvac-safety-control.git')
-    os.system('mv ./hvac-safety-control/CO2_data ./CO2_data')
-    os.system('rm -r ./hvac-safety-control')
+    os.system('mv ../hvac-safety-control/CO2_data ../CO2_data')
+    os.system('rm -r ../hvac-safety-control')
