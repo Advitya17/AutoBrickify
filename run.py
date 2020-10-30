@@ -14,7 +14,7 @@ from matplotlib.ticker import MultipleLocator, AutoMinorLocator, AutoLocator, Fi
 # from building_depot import DataService, BDError
 from datetime import timedelta
 from cycler import cycler
-from etl import load_uuid_data
+from etl import load_uuid_data, load_co2_data
 
 sys.path.append('./src')
 
@@ -26,5 +26,7 @@ if __name__ == "__main__":
     elif action == 'data':
         load_uuid_data()
         print("Sensor points data loaded in 'sensor_uuids.json'!")
+        load_co2_data()
+        print("Data loaded in the 'CO2_data' directory")
     else:
         print('Please specify a valid argument!')
