@@ -1,0 +1,130 @@
+{
+    "rm-2109": {
+        "Zone Temperature": "1aa34536-77de-11e2-bad4-00163e005319",
+        "Actual Cooling Setpoint": "1b8b338c-77de-11e2-83c4-00163e005319",
+        "Actual Heating Setpoint": "1bf7b3ea-77de-11e2-bad4-00163e005319",
+        "Actual Supply Flow": "1c76e854-77de-11e2-bad4-00163e005319",
+        "Reheat Valve Command": "3ac519b0-77df-11e2-83c4-00163e005319",
+        "Actual Sup Flow SP": "3b4d274c-77df-11e2-bad4-00163e005319"
+    },
+    "rm-2150": {
+        "Zone Temperature": "10edd9f2-77de-11e2-bad4-00163e005319",
+        "Actual Cooling Setpoint": "1181eeb2-77de-11e2-83c4-00163e005319",
+        "Actual Heating Setpoint": "11abe230-77de-11e2-bad4-00163e005319",
+        "Actual Supply Flow": "121bc366-77de-11e2-bad4-00163e005319",
+        "Reheat Valve Command": "2f17df30-77df-11e2-83c4-00163e005319",
+        "Actual Sup Flow SP": "2fad9b24-77df-11e2-bad4-00163e005319"
+    },
+    "rm-4140": {
+        "Zone Temperature": "80722652-77de-11e2-bad4-00163e005319",
+        "Actual Cooling Setpoint": "8102d5d0-77de-11e2-83c4-00163e005319",
+        "Actual Heating Setpoint": "8138855e-77de-11e2-bad4-00163e005319",
+        "Actual Supply Flow": "81fadd34-77de-11e2-bad4-00163e005319",
+        "Reheat Valve Command": "ab725466-77df-11e2-83c4-00163e005319",
+        "Actual Sup Flow SP": "ac11b510-77df-11e2-bad4-00163e005319"
+    },
+    "rm-2118": {
+        "Zone Temperature": "01e186f2-77de-11e2-83c4-00163e005319",
+        "Actual Cooling Setpoint": "02c69aee-77de-11e2-bad4-00163e005319",
+        "Actual Heating Setpoint": "030d426e-77de-11e2-83c4-00163e005319",
+        "Actual Supply Flow": "037bc342-77de-11e2-83c4-00163e005319",
+        "Reheat Valve Command": "1d18095e-77df-11e2-bad4-00163e005319",
+        "Actual Sup Flow SP": "1dbc627e-77df-11e2-83c4-00163e005319"
+    },
+    "rm-2217": {
+        "Zone Temperature": "f0d30214-77dd-11e2-83c4-00163e005319",
+        "Actual Cooling Setpoint": "f1c9bfbe-77dd-11e2-bad4-00163e005319",
+        "Actual Heating Setpoint": "f1feb912-77dd-11e2-83c4-00163e005319",
+        "Actual Supply Flow": "f25cf11c-77dd-11e2-83c4-00163e005319",
+        "Reheat Valve Command": "09f4ec5c-77df-11e2-bad4-00163e005319",
+        "Actual Sup Flow SP": "0a893416-77df-11e2-83c4-00163e005319"
+    },
+    "rm-3150": {
+        "Zone Temperature": "f3f5a20c-77de-11e2-bad4-00163e005319",
+        "Actual Cooling Setpoint": "f49b02d8-77de-11e2-83c4-00163e005319",
+        "Actual Heating Setpoint": "f4ce564c-77de-11e2-bad4-00163e005319",
+        "Actual Supply Flow": "f53b2d80-77de-11e2-bad4-00163e005319",
+        "Reheat Valve Command": "36a21b2a-77e0-11e2-83c4-00163e005319",
+        "Actual Sup Flow SP": "373d379a-77e0-11e2-bad4-00163e005319"
+    },
+    "rm-4102": {
+        "Zone Temperature": "c4a405c0-77de-11e2-bad4-00163e005319",
+        "Actual Cooling Setpoint": "c537ade8-77de-11e2-83c4-00163e005319",
+        "Actual Heating Setpoint": "c5708708-77de-11e2-bad4-00163e005319",
+        "Actual Supply Flow": "c5d95aa8-77de-11e2-bad4-00163e005319",
+        "Reheat Valve Command": "f88cd460-77df-11e2-83c4-00163e005319",
+        "Actual Sup Flow SP": "f920ae2e-77df-11e2-bad4-00163e005319"
+    },
+    "rm-4150": {
+        "Zone Temperature": "cad51100-77de-11e2-bad4-00163e005319",
+        "Actual Cooling Setpoint": "cb7741e6-77de-11e2-83c4-00163e005319",
+        "Actual Heating Setpoint": "cbac8be4-77de-11e2-bad4-00163e005319",
+        "Actual Supply Flow": "cc21ab9a-77de-11e2-bad4-00163e005319",
+        "Reheat Valve Command": "00724d36-77e0-11e2-83c4-00163e005319",
+        "Actual Sup Flow SP": "011a3f00-77e0-11e2-bad4-00163e005319"
+    },
+    "rm-4258": {
+        "Zone Temperature": "aaa1844a-77de-11e2-bad4-00163e005319",
+        "Actual Cooling Setpoint": "ab4cd502-77de-11e2-83c4-00163e005319",
+        "Actual Heating Setpoint": "ab7b3c6c-77de-11e2-bad4-00163e005319",
+        "Actual Supply Flow": "abdf9662-77de-11e2-bad4-00163e005319",
+        "Reheat Valve Command": "d7cc499a-77df-11e2-83c4-00163e005319",
+        "Actual Sup Flow SP": "d8b8ba0a-77df-11e2-bad4-00163e005319"
+    },
+    "rm-2116": {
+        "Zone Temperature": "05262f20-77de-11e2-83c4-00163e005319",
+        "Actual Cooling Setpoint": "0621fe72-77de-11e2-bad4-00163e005319",
+        "Actual Heating Setpoint": "064e2100-77de-11e2-83c4-00163e005319",
+        "Actual Supply Flow": "06b3926a-77de-11e2-83c4-00163e005319",
+        "Reheat Valve Command": "211f228a-77df-11e2-bad4-00163e005319",
+        "Actual Sup Flow SP": "21e583bc-77df-11e2-83c4-00163e005319"
+    },
+    "rm-2148": {
+        "Zone Temperature": "124fc274-77de-11e2-83c4-00163e005319",
+        "Actual Cooling Setpoint": "135c8954-77de-11e2-bad4-00163e005319",
+        "Actual Heating Setpoint": "13b26568-77de-11e2-83c4-00163e005319",
+        "Actual Supply Flow": "141555c4-77de-11e2-83c4-00163e005319",
+        "Reheat Valve Command": "30e54b4a-77df-11e2-bad4-00163e005319",
+        "Actual Sup Flow SP": "3181b084-77df-11e2-83c4-00163e005319"
+    },
+    "rm-2219": {
+        "Zone Temperature": "610bf07c-77de-11e2-bad4-00163e005319",
+        "Actual Cooling Setpoint": "620a19b8-77de-11e2-83c4-00163e005319",
+        "Actual Heating Setpoint": "623c2dd6-77de-11e2-bad4-00163e005319",
+        "Actual Supply Flow": "62adbc3a-77de-11e2-bad4-00163e005319",
+        "Reheat Valve Command": "8e70f778-77df-11e2-83c4-00163e005319",
+        "Actual Sup Flow SP": "8f1a04b2-77df-11e2-bad4-00163e005319"
+    },
+    "rm-3148": {
+        "Zone Temperature": "f6a47cb2-77de-11e2-83c4-00163e005319",
+        "Actual Cooling Setpoint": "f74602ee-77de-11e2-bad4-00163e005319",
+        "Actual Heating Setpoint": "f78755aa-77de-11e2-83c4-00163e005319",
+        "Actual Supply Flow": "f8399d00-77de-11e2-83c4-00163e005319",
+        "Reheat Valve Command": "39c8d8c0-77e0-11e2-bad4-00163e005319",
+        "Actual Sup Flow SP": "3a74f592-77e0-11e2-83c4-00163e005319"
+    },
+    "rm-4106": {
+        "Zone Temperature": "c320d598-77de-11e2-83c4-00163e005319",
+        "Actual Cooling Setpoint": "c3d73b26-77de-11e2-bad4-00163e005319",
+        "Actual Heating Setpoint": "c40b6676-77de-11e2-83c4-00163e005319",
+        "Actual Supply Flow": "c476cfb0-77de-11e2-83c4-00163e005319",
+        "Reheat Valve Command": "f6abe5e6-77df-11e2-bad4-00163e005319",
+        "Actual Sup Flow SP": "f74ccbaa-77df-11e2-83c4-00163e005319"
+    },
+    "rm-4148": {
+        "Zone Temperature": "cc4ccbb8-77de-11e2-83c4-00163e005319",
+        "Actual Cooling Setpoint": "cce2f250-77de-11e2-bad4-00163e005319",
+        "Actual Heating Setpoint": "cd181fb6-77de-11e2-83c4-00163e005319",
+        "Actual Supply Flow": "cd7e9ade-77de-11e2-83c4-00163e005319",
+        "Reheat Valve Command": "02894552-77e0-11e2-bad4-00163e005319",
+        "Actual Sup Flow SP": "032dc8c0-77e0-11e2-83c4-00163e005319"
+    },
+    "rm-4256": {
+        "Zone Temperature": "a939bdfc-77de-11e2-83c4-00163e005319",
+        "Actual Cooling Setpoint": "a9dcef40-77de-11e2-bad4-00163e005319",
+        "Actual Heating Setpoint": "aa0e7efc-77de-11e2-83c4-00163e005319",
+        "Actual Supply Flow": "aa68e5ea-77de-11e2-83c4-00163e005319",
+        "Reheat Valve Command": "d5f26ffa-77df-11e2-bad4-00163e005319",
+        "Actual Sup Flow SP": "d6997048-77df-11e2-83c4-00163e005319"
+    }
+}
