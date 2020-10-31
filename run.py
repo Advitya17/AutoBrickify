@@ -1,19 +1,5 @@
-import pprint
-import pdb
-import arrow
-import json
 import sys
 import os
-import time
-import logging
-import csv
-
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-from matplotlib.ticker import MultipleLocator, AutoMinorLocator, AutoLocator, FixedLocator
-# from building_depot import DataService, BDError
-from datetime import timedelta
-from cycler import cycler
 from etl import load_uuid_data, load_co2_and_humidity_data
 
 sys.path.append('./src')
