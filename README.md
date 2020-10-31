@@ -23,7 +23,7 @@ The current contents of this rudimentary data ingestion pipeline include:
 `python run.py data`
 
 
-You should find `sensor_uuids.json` in the `/configs` folder and a newly fetched `/data` folder
+At the end, you should find `sensor_uuids.json` in the `/configs` folder and a newly fetched `/data` folder
 
 ### Responsibilities
 
