@@ -24,3 +24,8 @@ The current contents of this rudimentary data ingestion pipeline include:
 
 
 You should find `sensor_uuids.json` in the `/configs` folder and a newly fetched `/data` folder
+
+### Responsibilities
+
+* Devanshu developed the template structure, added the etl file `load_co2_and_humidity_data` function, and uploaded the replication paper.
+* Advitya developed the README documentation, requirements file, run file, and populated the GitLab json/API files (and related system path support) in the `config` and `src` folder.
