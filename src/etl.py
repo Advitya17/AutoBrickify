@@ -1,4 +1,4 @@
-# Everything except the 'load_co2_and_humidity_data' function is taken from: 
+# Everything except the 'load_co2_and_humidity_data' function is taken from:
 # https://gitlab.com/dzhong1989/hvac-safety-control/-/blob/master/experiment.py
 
 import pprint
@@ -18,10 +18,10 @@ from building_depot import DataService, BDError
 from datetime import timedelta
 from cycler import cycler
 
-sys.path.append('../config')
+# sys.path.append('../config')
 
 # load config
-config = json.load(open('data-params.json')) # '../data-params.json'
+config = json.load(open('config/data-params.json')) # '../data-params.json'
 cse_dataservice_url = config["cse_dataservice_url"]
 bd_username = config["bd_username"]
 bd_api_key = config["bd_api_key"]
@@ -43,14 +43,13 @@ def load_uuid_data():
         uuids = {sensor['template']: sensor['uuid'] for sensor in resp['sensors'] if sensor['template'] in remote_sensors}
         data[room] = uuids
 
-    with open('../config/sensor_uuids.json', 'w') as outfile:
+    with open('config/sensor_uuids.json', 'w') as outfile:
         json.dump(data, outfile, indent=4)
 
 def load_co2_and_humidity_data():
     os.system('git clone https://gitlab.com/dzhong1989/hvac-safety-control.git')
-    os.rename('./hvac-safety-control', '../hvac-safety-control')
-    os.rename('../hvac-safety-control/CO2_data', '../CO2_data')
-    os.rename('../CO2_data', '../data')
-    os.rmdir('../hvac-safety-control') 
+    os.system('mv ./hvac-safety-control ../hvac-safety-control')
+    os.system('mv ../hvac-safety-control/CO2_data ../CO2_data')
+    os.system('mv ../CO2_data ../data')
+    os.system('rm -rf ../hvac-safety-control')
 
-    
