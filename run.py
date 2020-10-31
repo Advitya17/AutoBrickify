@@ -1,8 +1,7 @@
 import sys
+sys.path.append('./src')
 import os
 from etl import load_uuid_data, load_co2_and_humidity_data
-
-sys.path.append('./src')
 
 if __name__ == "__main__":
     action = sys.argv[1]
