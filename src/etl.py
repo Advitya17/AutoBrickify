@@ -25,19 +25,18 @@ config = json.load(open('config/data-params.json')) # '../data-params.json'
 cse_dataservice_url = config["cse_dataservice_url"]
 bd_username = config["bd_username"]
 bd_api_key = config["bd_api_key"]
-# session_length = config["session_length"] # not used so far
 remote_sensors = config["remote_sensors"]
-# local_sensors = config["local_sensors"] # not used so far
-actuation_target_sensor = config["actuation_target_sensor"]
+
+etl_config = json.load(open('config/etl-params.json')) # '../data-params.json'
+source_repo = etl_config["source_repo"]
 
 #Connect with BuildingDepot
 ds = DataService(cse_dataservice_url, bd_api_key, bd_username)
 
 def extract_bd_api():
-    os.system('git clone https://gitlab.com/dzhong1989/hvac-safety-control.git')
-    os.system('mv ./hvac-safety-control ../hvac-safety-control')
-    os.system('mv ../hvac-safety-control/building_depot ../src/building_depot')
-    os.system('rm -rf ../hvac-safety-control')
+    os.system('git clone ' + source_repo)
+    os.system('mv ./hvac-safety-control/building_depot ../src/building_depot')
+    os.system('rm -rf ./hvac-safety-control')
 
 def load_uuid_data():
     data = {}
@@ -53,9 +52,8 @@ def load_uuid_data():
         json.dump(data, outfile, indent=4)
 
 def load_co2_and_humidity_data():
-    os.system('git clone https://gitlab.com/dzhong1989/hvac-safety-control.git')
-    os.system('mv ./hvac-safety-control ../hvac-safety-control')
-    os.system('mv ../hvac-safety-control/CO2_data ../CO2_data')
+    os.system('git clone ' + source_repo)
+    os.system('mv ./hvac-safety-control/CO2_data ../CO2_data')
     os.system('mv ../CO2_data ../data')
-    os.system('rm -rf ../hvac-safety-control')
+    os.system('rm -rf ./hvac-safety-control')
 
