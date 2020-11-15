@@ -9,8 +9,8 @@ def execute(action_arg):
         clean()
     
     if action_arg == 'env-setup' or run_all:
-        from etl import load_bd_api
-        load_bd_api()
+        from etl import extract_bd_api
+        extract_bd_api()
         os.system('pip install -r requirements.txt')
         print('API loaded and requirements installed!')
     
