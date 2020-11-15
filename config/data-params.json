@@ -40,7 +40,6 @@
         "rm-4148": 143,
         "rm-4256": 143
     },
-    "session_length": 2,
     "actuation_target_sensor": "Actual Sup Flow SP",
     "remote_sensors": [
         "Zone Temperature",
