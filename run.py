@@ -23,7 +23,7 @@ def execute(action_arg):
         print("CO2 and Humidity data loaded in the 'data' directory")
     
     if action_arg == 'plot' or run_all:
-        print('Will be fully implemented for checkpoint-3. Stay tuned!')
+        print('Will be fully executed in checkpoint-3. Stay tuned!')
     
     # print('Please specify a valid argument!')
 
