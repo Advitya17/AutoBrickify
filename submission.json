@@ -1,0 +1,7 @@
+{
+    "config": ["config/data-params.json", "TODO"],  # paths of at least 2 config files
+    "build": "run.py", # path of your build script
+    "library": ["src"], # directory containing (your) library code
+    "notebook": ["<notebook_filepath>.ipynb"] # path to at least one notebook meant for reading by someone other than you.
+    "targets": ["target1", "target2"] # at least two targets
+}
