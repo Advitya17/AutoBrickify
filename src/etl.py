@@ -33,6 +33,12 @@ actuation_target_sensor = config["actuation_target_sensor"]
 #Connect with BuildingDepot
 ds = DataService(cse_dataservice_url, bd_api_key, bd_username)
 
+def extract_bd_api():
+    os.system('git clone https://gitlab.com/dzhong1989/hvac-safety-control.git')
+    os.system('mv ./hvac-safety-control ../hvac-safety-control')
+    os.system('mv ../hvac-safety-control/building_depot ../src/building_depot')
+    os.system('rm -rf ../hvac-safety-control')
+
 def load_uuid_data():
     data = {}
     for room in list(config["target_rooms_setpoint_values"].keys())+list(config["uncontrolled_rooms"].keys()):
