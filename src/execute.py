@@ -45,6 +45,62 @@ actuation_target_sensor = config["actuation_target_sensor"]
 #Connect with BuildingDepot
 ds = DataService(cse_dataservice_url, bd_api_key, bd_username)
 
+def get_local_plot_details(fig, axarr, lgds):
+    ax2 = axarr[1] # axes for CO2
+    ax4 = ax2.twinx() # axes for humidity
+    
+    lines2 = {} # lines on ax2 and ax4 (co2, humidity)
+    
+    ##################################       
+    # read local sensors data & plot #
+    ##################################
+    with open(f'CO2_data/{room}/{str(start_time.date())}.csv') as csvFile:
+        reader = csv.reader(csvFile, delimiter=',', quotechar='"')
+        next(reader)
+        time, co2, humidity = [], [], []
+        for row in reader:
+            t = arrow.get(row[0])
+            if t < start_time:
+                continue
+            time.append(t.datetime)
+            co2.append(float(row[1]))
+            humidity.append(float(row[2]))
+        # co2
+        line_co2, = ax2.plot(time, co2, linewidth=3, label='CO2 Density', color='tab:red')
+        lines2["Carbon Dioxide Concentration"] = line_co2
+
+        # humidity
+        line_humidity, = ax4.plot(time, humidity, linewidth=3, label='Relative Humidity', color='tab:purple')
+        lines2["Humidity"] = line_humidity
+    
+    lgd = ax1.legend(list(lines1.values()), [l.get_label() for l in lines1.values()], loc='lower center', bbox_to_anchor=(0.5, 0.98),
+                    fancybox=True, shadow=True, ncol=2)
+    lgds.append(lgd)
+    ax1.set_title(title, y=1.43)
+    
+    #########################
+    # configure ax2 and ax4 #
+    #########################
+    ax2.set_ylim(350,450)
+    lcolor = lines2['Carbon Dioxide Concentration'].get_color()
+    ax2.set_ylabel('CO2 Density (ppm)', color=lcolor)
+    ax2.tick_params(axis='y', labelcolor=lcolor, color=lcolor, which='both')
+    ax2.yaxis.set_minor_locator(AutoMinorLocator())
+
+    # print(ax4.get_ylim())
+    ax4.set_ylim(58.525, 71.575)
+    lcolor = lines2['Humidity'].get_color()
+    ax4.set_ylabel('Humidity (%)', color=lcolor)
+    ax4.tick_params(axis='y', labelcolor=lcolor, color=lcolor)
+    ax4.yaxis.set_major_locator(MultipleLocator(0.5))
+    ax4.yaxis.set_major_locator(MultipleLocator(2))
+
+    ax2.grid(True)
+
+    lgd = ax2.legend(list(lines2.values()), [l.get_label() for l in lines2.values()], loc='lower center', bbox_to_anchor=(0.5, 0.98),
+        fancybox=True, shadow=True, ncol=2)
+    lgds.append(lgd)
+
 # create plots for certain period
 def plot():
     for start_time in glob('../'):
@@ -76,22 +132,20 @@ def plot():
         controlled_axes_range = {}
 
         for room in list(config["target_rooms_setpoint_values"].keys())+list(config["uncontrolled_rooms"].keys()):
-            if room in config["room_with_locals"]:
-                has_locals = True
-            else:
-                has_locals = False
-            print(room, has_locals)
+            has_locals = room in config["room_with_locals"]
+            print(room, has_locals) # remove
 
             fig, axarr = plt.subplots(2, sharex=True, figsize=(10.5,11)) if has_locals else plt.subplots(1, figsize=(10.5,6))# two subplots, upper one contains ax1/3, lower one contains ax2/4
             ax1 = axarr[0] if has_locals else axarr # axes for air flow
             ax3 = ax1.twinx() # axes for temperature
 
             if has_locals:
-                ax2 = axarr[1] # axes for CO2
-                ax4 = ax2.twinx() # axes for humidity
+                get_local_plot_details(fig, axarr, lgds) # POSITIONING if needed
+#                 ax2 = axarr[1] # axes for CO2
+#                 ax4 = ax2.twinx() # axes for humidity
 
             lines1 = {} # lines on ax1 and ax3 (CFM, temp)
-            lines2 = {} # lines on ax2 and ax4 (co2, humidity)
+#             lines2 = {} # lines on ax2 and ax4 (co2, humidity)
 
             ##############################
             # read remote sensors & plot #
@@ -141,28 +195,28 @@ def plot():
                     line, = ax3.plot(time, value, '-.', linewidth=1.5, label='Temperature Upper Bound', color='tab:grey')
                     lines1[sensor] = line
 
-            ##################################       
-            # read local sensors data & plot #
-            ##################################
-            if has_locals:
-                with open(f'CO2_data/{room}/{str(start_time.date())}.csv') as csvFile:
-                    reader = csv.reader(csvFile, delimiter=',', quotechar='"')
-                    next(reader)
-                    time, co2, humidity = [], [], []
-                    for row in reader:
-                        t = arrow.get(row[0])
-                        if t < start_time:
-                            continue
-                        time.append(t.datetime)
-                        co2.append(float(row[1]))
-                        humidity.append(float(row[2]))
-                    # co2
-                    line_co2, = ax2.plot(time, co2, linewidth=3, label='CO2 Density', color='tab:red')
-                    lines2["Carbon Dioxide Concentration"] = line_co2
+#             ##################################       
+#             # read local sensors data & plot #
+#             ##################################
+#             if has_locals:
+#                 with open(f'CO2_data/{room}/{str(start_time.date())}.csv') as csvFile:
+#                     reader = csv.reader(csvFile, delimiter=',', quotechar='"')
+#                     next(reader)
+#                     time, co2, humidity = [], [], []
+#                     for row in reader:
+#                         t = arrow.get(row[0])
+#                         if t < start_time:
+#                             continue
+#                         time.append(t.datetime)
+#                         co2.append(float(row[1]))
+#                         humidity.append(float(row[2]))
+#                     # co2
+#                     line_co2, = ax2.plot(time, co2, linewidth=3, label='CO2 Density', color='tab:red')
+#                     lines2["Carbon Dioxide Concentration"] = line_co2
 
-                    # humidity
-                    line_humidity, = ax4.plot(time, humidity, linewidth=3, label='Relative Humidity', color='tab:purple')
-                    lines2["Humidity"] = line_humidity
+#                     # humidity
+#                     line_humidity, = ax4.plot(time, humidity, linewidth=3, label='Relative Humidity', color='tab:purple')
+#                     lines2["Humidity"] = line_humidity
 
             if room in config["uncontrolled_rooms"]:
                 controlled_room = config["uncontrolled_rooms"][room]
@@ -196,46 +250,44 @@ def plot():
 
             ax1.xaxis.set_major_locator(hours)
             ax1.xaxis.set_major_formatter(hours_formatter)
-            # ax1.xaxis.set_minor_locator(tenmin)
-            # ax1.xaxis.set_minor_formatter(tenmin_formatter)
             ax1.grid(True)
 
             lgds = []
             # different legend layouts for ax1
-            if has_locals:
-                lgd = ax1.legend(list(lines1.values()), [l.get_label() for l in lines1.values()], loc='lower center', bbox_to_anchor=(0.5, 0.98),
-                    fancybox=True, shadow=True, ncol=2)
-                lgds.append(lgd)
-                ax1.set_title(title, y=1.43)
-            else:
-                lgd = ax1.legend(list(lines1.values()), [l.get_label() for l in lines1.values()], loc='center', bbox_to_anchor=(0.5, 1.19),
-                    fancybox=True, shadow=True, ncol=2)
-                lgds.append(lgd)
-                ax1.set_title(title,y=1.37)
+#             if has_locals:
+#                 lgd = ax1.legend(list(lines1.values()), [l.get_label() for l in lines1.values()], loc='lower center', bbox_to_anchor=(0.5, 0.98),
+#                     fancybox=True, shadow=True, ncol=2)
+#                 lgds.append(lgd)
+#                 ax1.set_title(title, y=1.43)
+#             else:
+            lgd = ax1.legend(list(lines1.values()), [l.get_label() for l in lines1.values()], loc='center', bbox_to_anchor=(0.5, 1.19),
+                fancybox=True, shadow=True, ncol=2)
+            lgds.append(lgd)
+            ax1.set_title(title,y=1.37)
 
-            #########################
-            # configure ax2 and ax4 #
-            #########################
-            if has_locals:
-                ax2.set_ylim(350,450)
-                lcolor = lines2['Carbon Dioxide Concentration'].get_color()
-                ax2.set_ylabel('CO2 Density (ppm)', color=lcolor)
-                ax2.tick_params(axis='y', labelcolor=lcolor, color=lcolor, which='both')
-                ax2.yaxis.set_minor_locator(AutoMinorLocator())
+#             #########################
+#             # configure ax2 and ax4 #
+#             #########################
+#             if has_locals:
+#                 ax2.set_ylim(350,450)
+#                 lcolor = lines2['Carbon Dioxide Concentration'].get_color()
+#                 ax2.set_ylabel('CO2 Density (ppm)', color=lcolor)
+#                 ax2.tick_params(axis='y', labelcolor=lcolor, color=lcolor, which='both')
+#                 ax2.yaxis.set_minor_locator(AutoMinorLocator())
 
-                # print(ax4.get_ylim())
-                ax4.set_ylim(58.525, 71.575)
-                lcolor = lines2['Humidity'].get_color()
-                ax4.set_ylabel('Humidity (%)', color=lcolor)
-                ax4.tick_params(axis='y', labelcolor=lcolor, color=lcolor)
-                ax4.yaxis.set_major_locator(MultipleLocator(0.5))
-                ax4.yaxis.set_major_locator(MultipleLocator(2))
+#                 # print(ax4.get_ylim())
+#                 ax4.set_ylim(58.525, 71.575)
+#                 lcolor = lines2['Humidity'].get_color()
+#                 ax4.set_ylabel('Humidity (%)', color=lcolor)
+#                 ax4.tick_params(axis='y', labelcolor=lcolor, color=lcolor)
+#                 ax4.yaxis.set_major_locator(MultipleLocator(0.5))
+#                 ax4.yaxis.set_major_locator(MultipleLocator(2))
 
-                ax2.grid(True)
+#                 ax2.grid(True)
 
-                lgd = ax2.legend(list(lines2.values()), [l.get_label() for l in lines2.values()], loc='lower center', bbox_to_anchor=(0.5, 0.98),
-                    fancybox=True, shadow=True, ncol=2)
-                lgds.append(lgd)
+#                 lgd = ax2.legend(list(lines2.values()), [l.get_label() for l in lines2.values()], loc='lower center', bbox_to_anchor=(0.5, 0.98),
+#                     fancybox=True, shadow=True, ncol=2)
+#                 lgds.append(lgd)
 
             ########################
             # configure fig & save #
