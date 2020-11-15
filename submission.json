@@ -1,7 +1,7 @@
 {
-    "config": ["config/data-params.json", "TODO"],  # paths of at least 2 config files
-    "build": "run.py", # path of your build script
+    "config": ["config/data-params.json", "config/etl-params.json"],
+    "build": "run.py",
     "library": ["src"],
-    "notebook": ["<notebook_filepath>.ipynb"] # path to at least one notebook meant for reading by someone other than you.
+    "notebook": []
     "targets": ["env-setup", "data", "plot", "clean", "all"]
 }
