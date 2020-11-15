@@ -29,14 +29,17 @@ remote_sensors = config["remote_sensors"]
 
 etl_config = json.load(open('config/etl-params.json')) # '../data-params.json'
 source_repo = etl_config["source_repo"]
+repo_name = etl_config["repo_name"]
+api_fp = etl_config["api_fp"]
+data_fp = etl_config["data_fp"]
 
 #Connect with BuildingDepot
 ds = DataService(cse_dataservice_url, bd_api_key, bd_username)
 
 def extract_bd_api():
     os.system('git clone ' + source_repo)
-    os.system('mv ./hvac-safety-control/building_depot ../src/building_depot')
-    os.system('rm -rf ./hvac-safety-control')
+    os.system('mv ' + api_fp + ' ../src/building_depot')
+    os.system('rm -rf ./' + repo_name)
 
 def load_uuid_data():
     data = {}
@@ -53,7 +56,7 @@ def load_uuid_data():
 
 def load_co2_and_humidity_data():
     os.system('git clone ' + source_repo)
-    os.system('mv ./hvac-safety-control/CO2_data ../CO2_data')
-    os.system('mv ../CO2_data ../data')
-    os.system('rm -rf ./hvac-safety-control')
+    os.system('mv ' + data_fp + ' ../src/data')
+    # os.system('mv ../CO2_data ../data')
+    os.system('rm -rf ./' + repo_name)
 
