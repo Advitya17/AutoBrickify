@@ -7,7 +7,7 @@ Currently it supports a rudimentary data ingestion component, actions with targe
 
 ## Contents
 The current contents of this rudimentary data ingestion pipeline include:
-1. Python file (for ETL processes, convenience utilities, and actual implementations)
+1. Python files (for ETL processes, convenience utilities, and actual implementations)
 2. Documentation (as shown here)
 3. Replication paper in `references`
 4. The main runnable python script (`run.py`). 
@@ -33,8 +33,3 @@ At the end, you should find `sensor_uuids.json` in the `/configs` folder and a n
 
 `python run.py plot` (will be fully functional in checkpoint-3)
 
-
-### Responsibilities (needed? TODO)
-
-* Devanshu developed the template structure, added the etl file `load_co2_and_humidity_data` function, uploaded the replication paper, and helped in debugging code.
-* Advitya developed the README documentation, requirements file, run file, and populated the GitLab json/API files (and related system path support) in the `config` and `src` folder.
