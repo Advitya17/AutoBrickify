@@ -21,6 +21,8 @@ The current contents of this rudimentary data ingestion pipeline include:
 
 At the end, you should find `building_depot` API folder in the `/src` folder.
 
+Alternatively, you may build with the `Dockerfile`!
+
 2. Load the sensor data points
 
 `python run.py data`
