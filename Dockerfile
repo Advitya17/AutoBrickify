@@ -1,3 +1,6 @@
+# referenced from https://github.com/ucsd-ets/datahub-example-notebook/blob/master/Dockerfile
+# All requirements are directly taken from https://gitlab.com/dzhong1989/hvac-safety-control/-/blob/master/requirements.txt
+
 # 1) choose base container
 # generally use the most recent tag
 
