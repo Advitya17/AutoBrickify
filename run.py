@@ -22,6 +22,10 @@ def execute(action_arg):
         load_co2_and_humidity_data()
         print("CO2 and Humidity data loaded in the 'data' directory")
     
+    if action_arg == 'test':
+        from execute import run_test
+        run_test()
+    
     if action_arg == 'plot' or run_all:
         print('Will be fully executed in checkpoint-3. Stay tuned!')
     
