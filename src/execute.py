@@ -244,3 +244,7 @@ def plot():
             fig.autofmt_xdate()
             plt.savefig(filename, bbox_extra_artists=lgds, bbox_inches='tight')
             plt.close()
+
+def run_test():
+    # todo
+    pass
