@@ -36,7 +36,7 @@ except FileExistsError:
 logging.basicConfig(filename=f'logs/{arrow.now().format()}.log',level=logging.DEBUG)
 
 # load config
-config = json.load(open('../config/data-params.json'))
+config = json.load(open('config/data-params.json'))
 cse_dataservice_url = config["cse_dataservice_url"]
 bd_username = config["bd_username"]
 bd_api_key = config["bd_api_key"]
@@ -200,7 +200,7 @@ def get_local_sensor_plot_details(axarr, lgds):
 def plot():
     for start_time in glob('../'):
         start_time = arrow.get(start_time).shift(hours=7)
-        uuids = json.load(open('sensor_uuids.json'))
+        uuids = json.load(open('config/sensor_uuids.json'))
         PT = 'US/Pacific'
         start_time = start_time.to(PT)
         # start_time = arrow.get(2020, 8, 2, 0, 0, 0, tzinfo=PT) # change this parameter for different sessions
@@ -247,8 +247,9 @@ def plot():
 
 def run_test():
     # todo
-    start_time = 'HARDCODE' # TODO
-    uuids = json.load(open('sensor_uuids.json'))
+    start_time = '2020-07-30' # TODO
+    start_time = arrow.get(start_time).shift(hours=7)
+    uuids = json.load(open('config/sensor_uuids.json'))
     PT = 'US/Pacific'
     start_time = start_time.to(PT)
     # start_time = arrow.get(2020, 8, 2, 0, 0, 0, tzinfo=PT) # change this parameter for different sessions
@@ -258,10 +259,10 @@ def run_test():
 
     # create plot directory for this experiment
     try:
-        os.mkdir('../plot', 0o755)
+        os.mkdir('plot', 0o755)
     except FileExistsError:
         pass
-    path = f'../plot/{start_time.format("YYYY-MM-DD")}'
+    path = f'plot/{start_time.format("YYYY-MM-DD")}'
     try:
         os.mkdir(path, 0o755)
     except FileExistsError:
@@ -274,7 +275,7 @@ def run_test():
 
     controlled_axes_range = {}
     
-    room = 'HARDCODE'
+    room = 'rm-2150'
 
     has_locals = room in config["room_with_locals"]
     print(room, has_locals) # remove
@@ -386,7 +387,7 @@ def run_test():
         ##################################       
         # read local sensors data & plot #
         ##################################
-        with open(f'CO2_data/{room}/{str(start_time.date())}.csv') as csvFile:
+        with open(f'test/testdata/{room}/{str(start_time.date())}.csv') as csvFile:
             reader = csv.reader(csvFile, delimiter=',', quotechar='"')
             next(reader)
             time, co2, humidity = [], [], []
