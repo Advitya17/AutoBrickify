@@ -10,12 +10,13 @@ def execute(action_arg):
         clean_extra_contents()
     
     if action_arg == 'env-setup' or run_all:
-        from etl import extract_bd_api
-        extract_bd_api()
         os.system('pip install -r requirements.txt')
-        print('API loaded and requirements installed!')
+        print('Requirements installed!')
     
     if action_arg == 'data' or run_all:
+        from etl import extract_bd_api
+        extract_bd_api()
+        print('Building Depot API loaded!')
         from etl import load_uuid_data, load_co2_and_humidity_data
         load_uuid_data()
         print("Sensor points data loaded in 'sensor_uuids.json'!")
