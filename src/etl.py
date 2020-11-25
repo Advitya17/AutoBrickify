@@ -27,8 +27,8 @@ data_fp = etl_params['data_fp']
 
 # Connect with BuildingDepot
 def extract_bd_api():
-    os.system('git clone ' + source_repo)
-    os.system('mv ' + api_fp + ' ../src/building_depot')
+    os.system('git clone ' + source_repo + ' --quiet')
+    os.system('mv ' + api_fp + ' src/building_depot')
     os.system('rm -rf ./' + repo_name)
 
 def load_uuid_data():
@@ -47,6 +47,9 @@ def load_uuid_data():
     api_fp = etl_config["api_fp"]
     data_fp = etl_config["data_fp"]
 
+    #Connect with BuildingDepot
+    ds = DataService(cse_dataservice_url, bd_api_key, bd_username)
+
     data = {}
     for room in list(config["target_rooms_setpoint_values"].keys())+list(config["uncontrolled_rooms"].keys()):
         query = {
@@ -60,8 +63,8 @@ def load_uuid_data():
         json.dump(data, outfile, indent=4)
 
 def load_co2_and_humidity_data():
-    os.system('git clone ' + source_repo)
-    os.system('mv ' + data_fp + ' ../src/data')
+    os.system('git clone ' + source_repo + ' --quiet')
+    os.system('mv ' + data_fp + ' data')
     # os.system('mv ../CO2_data ../data')
     os.system('rm -rf ./' + repo_name)
 
