@@ -15,6 +15,16 @@ The current contents of this rudimentary data ingestion pipeline include:
 
 ## How to run it
 
+### For Methdology 7
+
+1. Set up the environment by building with the `Dockerfile`. Alternatively, you may use:
+
+`python run.py env-setup`
+
+2. Run `python run.py test` to get results with some test data.
+
+### General Instructions
+
 1. Set up the environment
 
 `python run.py env-setup`
