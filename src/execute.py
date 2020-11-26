@@ -246,8 +246,8 @@ def plot():
             plt.close()
 
 def run_test():
-    # todo
-    start_time = '2020-07-30' # TODO
+    """Same procedure with some hard-coded elements for running test data and observing results."""
+    start_time = '2020-07-30'
     start_time = arrow.get(start_time).shift(hours=7)
     uuids = json.load(open('config/sensor_uuids.json'))
     PT = 'US/Pacific'
