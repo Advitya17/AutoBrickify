@@ -32,7 +32,7 @@ def extract_bd_api():
     os.system('rm -rf ./' + repo_name)
 
 def load_uuid_data():
-    from building_depot import DataService, BDError
+    # from building_depot import DataService, BDError
 
     # load config
     config = json.load(open('config/data-params.json')) # '../data-params.json'

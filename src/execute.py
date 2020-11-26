@@ -13,7 +13,7 @@ import csv
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 from matplotlib.ticker import MultipleLocator, AutoMinorLocator, AutoLocator, FixedLocator
-from building_depot import DataService, BDError
+# from building_depot import DataService, BDError
 from datetime import timedelta
 from cycler import cycler
 
@@ -29,7 +29,7 @@ RETRYLIMIT = 2
 
 # create logging directory if not exists yet
 try:
-    os.mkdir('logs', 0o755) 
+    os.mkdir('logs', 0o755)
 except FileExistsError:
     pass
 # setup loggings
