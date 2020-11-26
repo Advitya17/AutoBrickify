@@ -25,6 +25,7 @@ def execute(action_arg):
         # print("CO2 and Humidity data loaded in the 'data' directory!")
     
     if action_arg == 'test':
+        execute('clean')
         execute('data')
         from execute import run_test
         run_test()
