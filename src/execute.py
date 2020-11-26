@@ -278,7 +278,7 @@ def run_test():
     room = 'rm-2150'
 
     has_locals = room in config["room_with_locals"]
-    print(room, has_locals) # remove
+    # print(room, has_locals) # remove
 
     # two subplots, upper one contains ax1/3, lower one contains ax2/4
     fig, axarr = plt.subplots(2, sharex=True, figsize=(10.5,11)) if has_locals else plt.subplots(1, figsize=(10.5,6))
