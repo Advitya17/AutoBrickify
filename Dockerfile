@@ -26,5 +26,11 @@ USER root
 RUN pip install --no-cache-dir scipy arrow==0.15.8 certifi==2020.6.20 chardet==3.0.4 cycler==0.10.0 idna==2.10 kiwisolver==1.2.0 \
 matplotlib==3.3.0 numpy==1.19.1 Pillow==7.2.0 pyparsing==2.4.7 python-dateutil==2.8.1 requests==2.24.0 six==1.15.0 urllib3==1.25.10
 
+# hard-coded api todo?
+# 4) Load BP API
+RUN git clone https://gitlab.com/dzhong1989/hvac-safety-control.git --quiet
+RUN mv ./hvac-safety-control/building_depot src/building_depot
+RUN rm -rf ./hvac-safety-control
+
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
