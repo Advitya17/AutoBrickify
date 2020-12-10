@@ -26,10 +26,10 @@ api_fp = etl_params['api_fp']
 data_fp = etl_params['data_fp']
 
 # Connect with BuildingDepot
-def extract_bd_api():
-    os.system('git clone ' + source_repo + ' --quiet')
-    os.system('mv ' + api_fp + ' src/building_depot')
-    os.system('rm -rf ./' + repo_name)
+# def extract_bd_api():
+#     os.system('git clone ' + source_repo + ' --quiet')
+#     os.system('mv ' + api_fp + ' src/building_depot')
+#     os.system('rm -rf ./' + repo_name)
 
 def load_uuid_data():
     from building_depot import DataService, BDError
