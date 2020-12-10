@@ -28,9 +28,9 @@ matplotlib==3.3.0 numpy==1.19.1 Pillow==7.2.0 pyparsing==2.4.7 python-dateutil==
 
 # hard-coded api todo?
 # 4) Load BP API
-RUN git clone https://gitlab.com/dzhong1989/hvac-safety-control.git --quiet
-RUN mv ./hvac-safety-control/building_depot src/building_depot
-RUN rm -rf ./hvac-safety-control
+# RUN git clone https://gitlab.com/dzhong1989/hvac-safety-control.git --quiet
+# RUN mv ./hvac-safety-control/building_depot src/building_depot
+# RUN rm -rf ./hvac-safety-control
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
