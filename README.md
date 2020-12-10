@@ -23,7 +23,7 @@ The current contents of this repository include:
 
 2. Run `python run.py test` to get results with some test data.
 
-### General Instructions
+### General Instructions (TODO)
 
 1. Set up the environment
 
