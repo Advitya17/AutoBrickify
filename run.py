@@ -32,10 +32,11 @@ def execute(action_arg):
         from etl import load_uuid_data, load_co2_and_humidity_data
         
         load_uuid_data()
-        print("Sensor points data loaded in 'sensor_uuids.json'!")
+        print("Sensor points data loaded in 'config/sensor_uuids.json'!")
         
         load_co2_and_humidity_data()
-        print("CO2 and Humidity data loaded in the 'data' directory!")
+        os.system('rm ./data/rm-4140/2930034448-latest.csv')
+        print("Structured CO2 and Humidity data loaded in the 'data' directory!")
     
     elif action_arg == 'test':
         # env-setup?
