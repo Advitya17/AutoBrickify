@@ -27,14 +27,15 @@ The current contents of this repository include:
 
 `python run.py all`
 
-### Justifications for Feedback
+### Feedback Responses
 
 * why can't you take the figures that you save and use them in a notebook/report?
 
 Done in the final report!
 
 * Avoid os.system if you can (prefer python's rename).
-TODO!
+
+The added shell file helped in directory renaming and reducing os.system calls. TODO
 
 * Usually, git clone shouldn't be called in library code (should be part of environment setup -- probably easier to put in a bash script).
 
