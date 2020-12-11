@@ -65,6 +65,5 @@ def load_uuid_data():
 def load_co2_and_humidity_data():
     os.system('git clone ' + source_repo + ' --quiet')
     os.system('mv ' + data_fp + ' data')
-    # os.system('mv ../CO2_data ../data')
     os.system('rm -rf ./' + repo_name)
 
