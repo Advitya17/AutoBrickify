@@ -20,10 +20,10 @@ def execute(action_arg):
         # for remote sensors.
         # needed system call to set right permission 
         # and load API, as per feedback.
-        os.system('chmod +x load_api.sh')
+        os.system('chmod +x load_api_and_data.sh')
         os.system('sh load_api_and_data.sh')
         print('Building Depot API loaded!')
-        print('CO2 and Humidity data loaded in the 'data' directory!')
+        print("CO2 and Humidity data loaded in the 'data' directory!")
     
     elif action_arg == 'data':
         from etl import load_uuid_data
