@@ -27,6 +27,8 @@ The current contents of this repository include:
 
 `python run.py all`
 
+It'll take ~6 minutes to run the `all` target.
+
 ### Feedback Responses
 
 * why can't you take the figures that you save and use them in a notebook/report?
