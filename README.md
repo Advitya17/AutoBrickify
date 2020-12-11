@@ -35,10 +35,8 @@ Done in the final report!
 
 * Avoid os.system if you can (prefer python's rename).
 
-The added shell file helped in directory renaming and reducing os.system calls. TODO
+The added shell file helped in directory renaming and reducing os.system calls. 
 
 * Usually, git clone shouldn't be called in library code (should be part of environment setup -- probably easier to put in a bash script).
 
-(a) We tried putting it in our dockerfile but observed it may not be possible as the user would have to git clone our repo after launching the container
-with the image. 
-(b) We have included it in our `env-setup` target and invoke a shell file to load the API.
+We have included it in our `env-setup` target and invoke a shell file to load the API.
