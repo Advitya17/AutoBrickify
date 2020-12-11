@@ -25,7 +25,7 @@ repo_name = etl_params['repo_name']
 api_fp = etl_params['api_fp']
 data_fp = etl_params['data_fp']
 
-# Connect with BuildingDepot
+# Python equivalent if needed
 # def extract_bd_api():
 #     os.system('git clone ' + source_repo + ' --quiet')
 #     os.system('mv ' + api_fp + ' src/building_depot')
@@ -62,8 +62,9 @@ def load_uuid_data():
     with open('config/sensor_uuids.json', 'w') as outfile:
         json.dump(data, outfile, indent=4)
 
-def load_co2_and_humidity_data():
-    os.system('git clone ' + source_repo + ' --quiet')
-    os.system('mv ' + data_fp + ' data')
-    os.system('rm -rf ./' + repo_name)
+# Python equivalent if needed
+# def load_co2_and_humidity_data():
+#     os.system('git clone ' + source_repo + ' --quiet')
+#     os.system('mv ' + data_fp + ' data')
+#     os.system('rm -rf ./' + repo_name)
 
