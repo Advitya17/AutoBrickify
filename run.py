@@ -17,23 +17,22 @@ def execute(action_arg):
         # print('Requirements installed!')
         
         # Sets up the BD API in the environment
-        # for remote sensors
-        
+        # for remote sensors.
         # needed system call to set right permission 
-        # and load API as per feedback
+        # and load API, as per feedback.
         os.system('chmod +x load_api.sh')
-        os.system('sh load_api.sh')
+        os.system('sh load_api_and_data.sh')
         print('Building Depot API loaded!')
+        print('CO2 and Humidity data loaded in the 'data' directory!')
     
     elif action_arg == 'data':
-        from etl import load_uuid_data, load_co2_and_humidity_data
+        from etl import load_uuid_data
         
         load_uuid_data()
         print("Sensor points data loaded in 'config/sensor_uuids.json'!")
         
-        load_co2_and_humidity_data()
         os.system('rm ./data/rm-4140/2930034448-latest.csv')
-        print("Structured CO2 and Humidity data loaded in the 'data' directory!")
+        print("Data cleaned for automated parsing!")
     
     elif action_arg == 'test':
         execute('clean')
