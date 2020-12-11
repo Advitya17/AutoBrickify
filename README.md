@@ -19,11 +19,15 @@ The current contents of this repository include:
 
 `pip install -r requirements.txt`
 
-2. For getting results with the testing data sample, run
+2. Go into the github repo directory:
+
+`cd 180A_result_replication`
+
+3. For getting results with the testing data sample, run
 
 `python run.py test`
 
-3. For getting results with the all extracted datasets, run
+4. For getting results with the all extracted datasets, run
 
 `python run.py all`
 
