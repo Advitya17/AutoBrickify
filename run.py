@@ -3,7 +3,7 @@ sys.path.append('./src')
 import os
 
 def execute(action_arg):
-    # TODO: remove
+    # Alternate way for executing all targets:
     # run_all = action_arg == 'all'
     # or run_all (stripped condition)
     
@@ -12,21 +12,18 @@ def execute(action_arg):
         clean_extra_contents()
     
     elif action_arg == 'env-setup':
-        # TODO: check if need to install requirements
-        # remove after documentation update for docker
+        # If need to install requirements:
         # os.system('pip install -r requirements.txt --quiet')
         # print('Requirements installed!')
+        
+        # Sets up the BD API in the environment
+        # for remote sensors
         
         # needed system call to set right permission 
         # and load API as per feedback
         os.system('chmod +x load_api.sh')
         os.system('sh load_api.sh')
         print('Building Depot API loaded!')
-        
-        # TODO: remove!
-        # from etl import extract_bd_api
-        # extract_bd_api()
-        # print('Building Depot API loaded!')
     
     elif action_arg == 'data':
         from etl import load_uuid_data, load_co2_and_humidity_data
@@ -39,13 +36,17 @@ def execute(action_arg):
         print("Structured CO2 and Humidity data loaded in the 'data' directory!")
     
     elif action_arg == 'test':
-        # env-setup?
         execute('clean')
         execute('env-setup')
         execute('data')
-        # from execute import run_test
-        # run_test()
-        # print('Test plot saved in a pdf file inside ./plot/2020-07-30!')
+        from execute import run_test
+        run_test()
+        print('Test plot saved in a pdf file inside ./plot/2020-07-30!')
+    
+    elif action_arg == 'all':
+        execute('clean')
+        execute('env-setup')
+        execute('data')
         execute('plot')
     
     elif action_arg == 'plot':
