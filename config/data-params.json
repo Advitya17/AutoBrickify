@@ -48,7 +48,6 @@
         "Reheat Valve Command",
         "Actual Cooling Setpoint",
         "Actual Heating Setpoint"],
-    "local_sensors": ["Carbon Dioxide Concentration", "Humidity"],
-    "room_with_locals": ["rm-2150", "rm-4140"]
+    "local_sensors": ["Carbon Dioxide Concentration", "Humidity"]
 }
 
