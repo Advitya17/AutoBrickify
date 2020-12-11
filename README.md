@@ -3,7 +3,7 @@
 ## Purpose of the offered implementation
 Programming a HVAC system to measure and change airflow rates from maximum to minimum and monitor the CO2 Density and Relative Humidity in a classroom and a conference room inside the EBU3B (CSE) building at UC San Diego.
 
-Currently it supports a rudimentary data ingestion component, actions with targets, and has an initial (work in progress in terms of best software engineering practices) implementation of the functions which is used with some testing data.
+Currently it supports a data ingestion component, actions with targets, and has the final implementation of the functions used with a testing sample and all extracted datasets.
 
 ## Contents
 The current contents of this repository include:
@@ -13,46 +13,37 @@ The current contents of this repository include:
 4. The main runnable python script (`run.py`). 
 5. Params files in the `configs` folder.
 
-## How to run it
-
-### For Methdology 7
+## Instructions to runt he project
 
 1. Set up the environment by building with the `Dockerfile`. Alternatively, you may use:
 
-`python run.py env-setup`
+`pip install -r requirements.txt`
 
-2. Run `python run.py test` to get results with some test data.
+2. Git clone the repository inside the launched container/pod (or after ensuring all requirements are installed): 
 
-### General Instructions (TODO)
+`git clone https://github.com/Advitya17/180A_result_replication.git`
 
-1. Set up the environment
+The repository link is also available in the `submission.json` file under the "repository-id" key.
 
-`python run.py env-setup`
+3. For getting results with the testing data sample, run
 
-At the end, you should find `building_depot` API folder in the `/src` folder.
+`python run.py test`
 
-Alternatively, you may build with the `Dockerfile`!
+4. For getting results with the all extracted datasets, run
 
-2. Load the sensor data points
-
-`python run.py data`
-
-At the end, you should find `sensor_uuids.json` in the `/configs` folder and a newly fetched `/data` folder
-
-3. Generate the final plots
-
-`python run.py plot` (will be fully functional in checkpoint-3)
+`python run.py all`
 
 ### Justifications for Feedback
 
 * why can't you take the figures that you save and use them in a notebook/report?
+
 Done in the final report!
 
 * Avoid os.system if you can (prefer python's rename).
 TODO!
 
 * Usually, git clone shouldn't be called in library code (should be part of environment setup -- probably easier to put in a bash script).
-TODO
-(a) We tried putting it in our dockerfile but figured it wouldn't be possible as the user would have to git clone our repo after launching the container
+
+(a) We tried putting it in our dockerfile but observed it may not be possible as the user would have to git clone our repo after launching the container
 with the image. 
 (b) We have included it in our `env-setup` target and invoke a shell file to load the API.
