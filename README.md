@@ -19,17 +19,11 @@ The current contents of this repository include:
 
 `pip install -r requirements.txt`
 
-2. Git clone the repository inside the launched container/pod (or after ensuring all requirements are installed): 
-
-`git clone https://github.com/Advitya17/180A_result_replication.git`
-
-The repository link is also available in the `submission.json` file under the "repository-id" key.
-
-3. For getting results with the testing data sample, run
+2. For getting results with the testing data sample, run
 
 `python run.py test`
 
-4. For getting results with the all extracted datasets, run
+3. For getting results with the all extracted datasets, run
 
 `python run.py all`
 
