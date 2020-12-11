@@ -19,7 +19,7 @@ The current contents of this repository include:
 
 `pip install -r requirements.txt`
 
-2. Go into the github repo directory:
+2. Go into the project root (github repo directory):
 
 `cd 180A_result_replication`
 
