@@ -2,6 +2,30 @@ import sys
 sys.path.append('./src')
 import os
 
+def automatic_OR(fp='table_743_v1.csv'):
+    """Automates work of Open Refine"""
+    df = pd.read_csv(fp)
+    
+    def random_idx():
+    return np.random.randint(0, len(df))
+
+    # naming conventions followed in column names
+
+    df = df[['description', 'jci_name']]
+    df.rename({'jci_name': 'PointLabel'}, axis=1)
+
+    # hard-coded
+    df[['_', 'UpstreamAHU', 'ZoneName', 'VAVName', 'BrickClass', '_']] = df.jci_name.str.split('.', expand=True)
+    df = df.drop('_', axis=1)
+
+    if 'AHU' not in df.UpstreamAHU[random_idx()]:
+        df.UpstreamAHU = 'AHU_' + df.UpstreamAHU
+
+    if 'VAV' not in df.VAVName[random_idx()]:
+        df.UpstreamAHU = 'VAV_' + df.VAVName
+
+    return df 
+
 def execute(action_arg):
     # Alternate way for executing all targets:
     # run_all = action_arg == 'all'
@@ -57,5 +81,8 @@ def execute(action_arg):
         print('Please specify a valid argument!')
 
 if __name__ == "__main__":
-    action = sys.argv[1]
-    execute(action)
+    automatic_OR(fp='table_743_v1.csv')
+    
+    # action = sys.argv[1]
+    # need to change
+    # execute(action)
