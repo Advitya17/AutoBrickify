@@ -34,7 +34,7 @@ def execute(action_arg):
     # or run_all (stripped condition)
 
     if action_arg == 'clean':
-        from utils import clean_extra_contents
+        from src.utils import clean_extra_contents
         clean_extra_contents()
 
     elif action_arg == 'env-setup':
@@ -52,7 +52,7 @@ def execute(action_arg):
         print("CO2 and Humidity data loaded in the 'data' directory!")
 
     elif action_arg == 'data':
-        from etl import load_uuid_data
+        from src.etl import load_uuid_data
 
         load_uuid_data()
         print("Sensor points data loaded in 'config/sensor_uuids.json'!")
@@ -64,7 +64,7 @@ def execute(action_arg):
         execute('clean')
         execute('env-setup')
         execute('data')
-        from execute import run_test
+        from src.execute import run_test
         run_test()
         print('Test plot saved in a pdf file inside ./plot/2020-07-30!')
 
@@ -75,7 +75,7 @@ def execute(action_arg):
         execute('plot')
 
     elif action_arg == 'plot':
-        from execute import plot
+        from src.execute import plot
         plot()
         print('All plots saved in ./plot!')
 
