@@ -14,6 +14,7 @@ from datetime import timedelta
 from cycler import cycler
 
 from glob import glob
+from utils import *
 
 # RETRYLIMIT = 2
 # 
@@ -24,20 +25,6 @@ from glob import glob
 #     pass
 # # setup loggings
 # logging.basicConfig(filename=f'logs/{arrow.now().format()}.log',level=logging.DEBUG)
-
-class Schema:
-    point_label_col = 'PointLabel'
-    ahu_col = 'UpstreamAHU'
-    zone_col = 'ZoneName'
-    vav_col = 'VAVName'
-    brick_class_col = 'BrickClass'
-    temp_col = '_'
-    col_list = [point_label_col, ahu_col, zone_col, vav_col, brick_class_col]
-    ahu_prefix = 'AHU_'
-    vav_prefix = 'VAV_'
-
-def random_idx(n):
-    return np.random.randint(0, n)
 
 def validate_plf(point_label_col):
     # TODO: some assumptions may need to be validated
@@ -113,7 +100,7 @@ def automatic_OR():
 
     # INFO: naming conventions followed in column names
     
-    # STEP 1: AUTOMATING WORK OF OPEN REFINE
+    # STEP 1: AUTOMATING ALL DATA TRANSFORMATIONS
     df = df[[point_label_col]]
     df = df.rename({point_label_col: Schema.point_label_col}, axis=1)
 
