@@ -111,8 +111,9 @@ def automatic_OR():
     
     df = pd.read_csv(fp)
 
-    # naming conventions followed in column names
-
+    # INFO: naming conventions followed in column names
+    
+    # STEP 1: AUTOMATING WORK OF OPEN REFINE
     df = df[[point_label_col]]
     df = df.rename({point_label_col: Schema.point_label_col}, axis=1)
 
@@ -131,8 +132,15 @@ def automatic_OR():
     n = len(df)
     
     # needed ??
-    df[Schema.ahu_col] = Schema.ahu_prefix + df[Schema.ahu_col].str.replace(Schema.ahu_prefix[:-1], '')
-    df[Schema.vav_col] = Schema.vav_prefix + df[Schema.vav_col].str.replace(Schema.vav_prefix[:-1], '')
+    df[Schema.ahu_col] = Schema.ahu_prefix + df[Schema.ahu_col].str.replace(Schema.ahu_prefix[:-1].lower(), 
+                                                                            '').replace(Schema.ahu_prefix[:-1], '')
+    df[Schema.vav_col] = Schema.vav_prefix + df[Schema.vav_col].str.replace(Schema.vav_prefix[:-1].lower(), 
+                                                                            '').replace(Schema.ahu_prefix[:-1], '')
+    
+    # STEP 2: RECONCILIATION API INJECTION
+    df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(recon_api_inference)
+    
+    # (STEP 3: BRICK BUILDER: COMING SOON)
 
     return df
 
