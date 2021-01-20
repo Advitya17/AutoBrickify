@@ -88,26 +88,27 @@ def automatic_OR():
     config = json.load(open('config/data-params.json'))
     fp = config['fp']
     point_label_col = config['point_label_col']
-    delimiter = config['delimiter']
+    pat = config['delimiter']['pattern']
+    regex = config['delimiter']['regex']
+    pat = pat.encode('unicode-escape').decode() if regex # converts to regex string as per user preference
     point_label_format = config['point_label_format']
     drop_null_rows = config['drop_null_rows']
     
+    # INFO: naming conventions followed in column names
     validate_plf(point_label_col)
     
     df = pd.read_csv(fp)
-
-    # INFO: naming conventions followed in column names
     
     # STEP 1: AUTOMATING ALL DATA TRANSFORMATIONS
     df = df[[point_label_col]]
     df = df.rename({point_label_col: Schema.point_label_col}, axis=1)
 
     split_cols, replications = get_split_col_names(point_label_format)
-    try:
-        df[split_cols] = df[Schema.point_label_col].str.split(delimiter, expand=True)
-    except: # find out error type
-        print('Number of columns not matching number of words separated from the \
-        point labels with the specified delimiter')
+    # try:
+    df[split_cols] = df[Schema.point_label_col].str.split(pat, expand=True)
+    # except: # TODO: find out error type
+    #     print('Number of columns not matching number of words separated from the \
+    #     point labels with the specified delimiter')
     df = df.drop(Schema.temp_col, axis=1)
     
     df = df[get_ordered_cols(split_cols, replications)]
