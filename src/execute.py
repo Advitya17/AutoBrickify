@@ -15,8 +15,8 @@ from cycler import cycler
 
 from glob import glob
 
-RETRYLIMIT = 2
-
+# RETRYLIMIT = 2
+# 
 # # create logging directory if not exists yet
 # try:
 #     os.mkdir('logs', 0o755)
@@ -40,11 +40,33 @@ def random_idx(n):
 def validate_plf(point_label_col):
     # TODO: some assumptions may need to be validated
     
-    assert all(cn in repr(point_label_col) for c in col_list), 'all column names are not utilized!'
-    assert len(point_label_col) == len(set(point_label_col)), 'specified column names are not unique!'
+    # assert all(cn in repr(point_label_col) for c in col_list), 'all column names are not utilized!'
+    # assert len(point_label_col) == len(Schema.col_list), 'specified column names are not unique!'
+    
+    num_cols = 0
+    flattened_plcs = []
+    for i in point_label_col:
+        if pl is None:
+            continue
+        elif type(pl) == str:
+            assert pl in Schema.col_list, '{0} is an invalid col name'.format(pl)
+            num_cols += 1
+            flattened_plcs.append(pl)
+        elif type(pl) == list:
+            for p in pl:
+                assert type(pl) == str, 'invalid type for nested col name {0}'.format(pl)
+                assert pl in Schema.col_list, '{0} is an invalid col name'.format(pl)
+                num_cols += 1
+                flattened_plcs.append(pl)
+        else:
+            raise TypeError # invalid point label format type
+    
+    assert num_cols == len(Schema.col_list), 'all column names are not utilized!'
+    assert len(set(flattened_plcs)) == num_cols, 'number of column names do not match!'
+            
 
 def get_split_col_names(point_label_format):
-    # ['_', 'UpstreamAHU', 'ZoneName', 'VAVName', 'BrickClass', '_']
+    # for example - ['_', 'UpstreamAHU', 'ZoneName', 'VAVName', 'BrickClass', '_']
     split_cols = []
     replications = {}
     
@@ -90,10 +112,14 @@ def automatic_OR():
     # naming conventions followed in column names
 
     df = df[[point_label_col]]
-    df.rename({point_label_col: Schema.point_label_col}, axis=1)
+    df = df.rename({point_label_col: Schema.point_label_col}, axis=1)
 
     split_cols, replications = get_split_col_names(point_label_format)
-    df[split_cols] = df.jci_name.str.split(delimiter, expand=True)
+    try:
+        df[split_cols] = df[Schema.point_label_col].str.split(delimiter, expand=True)
+    except: # find out error type
+        print('Number of columns not matching number of words separated from the \
+        point labels with the specified delimiter')
     df = df.drop(Schema.temp_col, axis=1)
     
     ordered_cols = get_ordered_cols(split_cols, replications)
