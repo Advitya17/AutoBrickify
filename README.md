@@ -11,7 +11,7 @@ Clone the repository and cd into the root directory.
 ### Step 2
 Specify your configurations in config/data-params.json. 
 
-Detailed instructions are available in the config/README.md file in this repository.
+Detailed instructions are available in the `config/README.md` file in this repository.
 
 
 ### Step 3
