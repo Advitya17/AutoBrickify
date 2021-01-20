@@ -1,7 +1,7 @@
 {
     "fp": "data/table_743_v1.csv",
     
-    point_label_col: "jci_name",
+    "point_label_col": "jci_name",
     
     "delimiter": ".",
     
