@@ -1,9 +1,0 @@
-
-{
-    "dockerhub-id": "advitya17/180a_result_replication",
-    "config": ["config/data-params.json", "config/etl-params.json"],
-    "build": "run.py",
-    "library": ["src"],
-    "notebook": [],
-    "targets": ["env-setup", "data", "plot", "clean", "test", "all"]
-}
