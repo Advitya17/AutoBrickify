@@ -47,7 +47,7 @@ def run(action_arg):
         print('Please specify a valid argument!')
 
 if __name__ == "__main__":
-    automatic_OR()
+    automatic_OR(filename='output.ttl')
 
     # action = sys.argv[1]
     # need to change
