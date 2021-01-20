@@ -4,12 +4,16 @@
 
 ### Step 1
 Clone the repository and cd into the root directory.
+
 `git clone https://github.com/Advitya17/AutoBrickify`
+
 
 ### Step 2
 Specify your configurations in config/data-params.json
 (Sub-instructions TODO)
 
+
 ### Step 3
 Run the project from the root directory.
+
 `python run.py`
