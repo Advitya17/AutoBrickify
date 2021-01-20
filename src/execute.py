@@ -33,6 +33,8 @@ class Schema:
     brick_class_col = 'BrickClass'
     temp_col = '_'
     col_list = [point_label_col, ahu_col, zone_col, vav_col, brick_class_col]
+    ahu_prefix = 'AHU_'
+    vav_prefix = 'VAV_'
 
 def random_idx(n):
     return np.random.randint(0, n)
@@ -122,18 +124,15 @@ def automatic_OR():
         point labels with the specified delimiter')
     df = df.drop(Schema.temp_col, axis=1)
     
-    ordered_cols = get_ordered_cols(split_cols, replications)
-    df = df[ordered_cols]
+    df = df[get_ordered_cols(split_cols, replications)]
     
     df = df.dropna() if drop_null_rows
     
     n = len(df)
-
-    if 'AHU' not in df.UpstreamAHU[random_idx(n)]:
-        df.UpstreamAHU = 'AHU_' + df.UpstreamAHU
-
-    if 'VAV' not in df.VAVName[random_idx(n)]:
-        df.UpstreamAHU = 'VAV_' + df.VAVName
+    
+    # needed ??
+    df[Schema.ahu_col] = Schema.ahu_prefix + df[Schema.ahu_col].str.replace(Schema.ahu_prefix[:-1], '')
+    df[Schema.vav_col] = Schema.vav_prefix + df[Schema.vav_col].str.replace(Schema.vav_prefix[:-1], '')
 
     return df
 
