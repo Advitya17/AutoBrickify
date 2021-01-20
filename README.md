@@ -18,3 +18,5 @@ Detailed instructions are available in the `config/README.md` file in this repos
 Run the project from the root directory.
 
 `python run.py`
+
+Turtle object will be generated in the root directory.
