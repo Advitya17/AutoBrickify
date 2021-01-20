@@ -71,6 +71,7 @@ def get_split_col_names(point_label_format):
     return split_cols, replications
 
 def get_ordered_cols(split_cols, replications):
+    """See if needed"""
     ordered_cols = []
     for sc in split_cols:
         if sc not in replications:
@@ -111,7 +112,8 @@ def automatic_OR():
     #     point labels with the specified delimiter')
     df = df.drop(Schema.temp_col, axis=1)
     
-    df = df[get_ordered_cols(split_cols, replications)]
+    # ordered for Brick Builder
+    df = df[Schema.col_list] # get_ordered_cols(split_cols, replications)
     
     df = df.dropna() if drop_null_rows
     
