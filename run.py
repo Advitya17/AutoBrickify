@@ -50,7 +50,7 @@ if __name__ == "__main__":
     filename = automatic_OR(filename='output.ttl')
     
     os.system('git clone https://github.com/gtfierro/brick-builder')
-    os.system('python make.py brick_builder_example.txt:' + filename)
+    os.system('python brick-builder/make.py brick_builder_example.txt:' + filename)
 
     # action = sys.argv[1]
     # need to change
