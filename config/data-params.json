@@ -13,6 +13,6 @@
         "BrickClass",
         null],
     
-    drop_null_rows: true
+    "drop_null_rows": true
 }
 
