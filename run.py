@@ -49,6 +49,7 @@ def run(action_arg):
 if __name__ == "__main__":
     filename = automatic_OR(filename='output.ttl')
     
+    # TODO: transfer to load_data_and_api.sh file
     os.system('git clone https://github.com/gtfierro/brick-builder')
     os.system('python brick-builder/make.py brick_builder_example.txt:' + filename)
 
