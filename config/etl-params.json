@@ -1,6 +1,0 @@
-{
-    "source_repo": "https://gitlab.com/dzhong1989/hvac-safety-control.git",
-    "repo_name": "hvac-safety-control", 
-    "api_fp": "./hvac-safety-control/building_depot",
-    "data_fp": "./hvac-safety-control/CO2_data"
-}
