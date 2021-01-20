@@ -82,7 +82,7 @@ def get_ordered_cols(split_cols, replications):
                 ordered_cols.append(c)
      return ordered_cols
 
-def automatic_OR():
+def automatic_OR(filename):
     """Automates work of Open Refine"""
     
     # load config
@@ -128,7 +128,9 @@ def automatic_OR():
     # STEP 2: RECONCILIATION API INJECTION
     df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(recon_api_inference)
     
-    # (STEP 3: BRICK BUILDER: COMING SOON)
+    df.to_csv(fp.split('.')[0] + '_processed.csv', index=False)
+    
+    # (STEP 3: BRICK BUILDER: CHECK run.py)
 
     return df
 
