@@ -1,53 +1,16 @@
 {
-    "cse_dataservice_url": "https://bd-datas1.ucsd.edu",
-    "bd_username": "genie_controller@ucsd.edu",
-    "bd_api_key": "313b0b78-7981-45ee-81d4-0fbe87963110",
-    "target_rooms_setpoint_values": {
-        "rm-2109": 790,
-        "rm-2150": 1085,
-        "rm-4140": 2450,
-        "rm-2118": 770,
-        "rm-2217": 800,
-        "rm-3150": 980,
-        "rm-4102": 800,
-        "rm-4150": 1020,
-        "rm-4258": 1135
-    },
-    "uncontrolled_rooms": {
-        "rm-2116": "rm-2118",
-        "rm-2148": "rm-2150",
-        "rm-2219": "rm-2217",
-        "rm-3148": "rm-3150",
-        "rm-4106": "rm-4102",
-        "rm-4148": "rm-4150",
-        "rm-4256": "rm-4258"
-    },
-    "ACH_Rate": {
-        "rm-4140": 143,
-        "rm-2109": 143,
-        "rm-2118": 143,
-        "rm-2150": 143,
-        "rm-2217": 143,
-        "rm-3150": 143,
-        "rm-4102": 143,
-        "rm-4150": 143,
-        "rm-4258": 143,
-        "rm-2116": 143,
-        "rm-2148": 143,
-        "rm-2219": 143,
-        "rm-3148": 143,
-        "rm-4106": 143,
-        "rm-4148": 143,
-        "rm-4256": 143
-    },
-    "actuation_target_sensor": "Actual Sup Flow SP",
-    "remote_sensors": [
-        "Zone Temperature",
-        "Actual Supply Flow",
-        "Actual Sup Flow SP",
-        "Reheat Valve Command",
-        "Actual Cooling Setpoint",
-        "Actual Heating Setpoint"],
-    "local_sensors": ["Carbon Dioxide Concentration", "Humidity"]
+    "fp": "data/table_743_v1.csv",
+    
+    point_label_col: "jci_name",
+    
+    "delimiter": ".",
+    
+    "point_label_format": [
+        null,
+        "UpstreamAHU",
+        "ZoneName",
+        "VAVName",
+        "BrickClass",
+        null]
 }
 
