@@ -11,6 +11,8 @@
         "ZoneName",
         "VAVName",
         "BrickClass",
-        null]
+        null],
+    
+    drop_null_rows: true
 }
 
