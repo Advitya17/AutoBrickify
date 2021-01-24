@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import os
-from abbrmap import abbrmap as tagmap
 import json
 import brickschema
 import re
@@ -41,5 +40,5 @@ def run(action_arg):
         print('Please specify a valid argument!')
 
 if __name__ == "__main__":
-    action = sys.argv[1]
+    action = 'brickify' if len(sys.argv) == 1 else sys.argv[1]
     execute(action)
