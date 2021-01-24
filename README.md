@@ -6,6 +6,8 @@ Clone the repository and cd into the root directory.
 
 `git clone https://github.com/Advitya17/AutoBrickify` & `cd AutoBrickify`
 
+Then run the command below to setup the tool environment.
+
 `python run.py env-setup`
 
 This'll print a message to the console at the end to confirm setup.
