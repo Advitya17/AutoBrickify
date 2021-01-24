@@ -8,8 +8,6 @@ import re
 import sys
 sys.path.append('./src')
 
-from src.execute import automatic_OR
-
 def run(action_arg):
     """Utilized later"""
 
@@ -19,40 +17,28 @@ def run(action_arg):
 
     elif action_arg == 'env-setup':
         # If need to install requirements:
-        # os.system('pip install -r requirements.txt --quiet')
-        # print('Requirements installed!')
-
-        # Sets up the BD API in the environment
-        # for remote sensors.
-        # needed system call to set right permission
-        # and load API, as per feedback.
-        pass
-
-    elif action_arg == 'data':
-        pass
-
-    elif action_arg == 'test':
-        pass
+        os.system('pip install -r requirements.txt --quiet')
+        print('Requirements installed!')
+        
+        os.system('chmod +x load_api_and_data.sh')
+        os.system('sh load_api_and_data.sh')
 
     elif action_arg == 'all':
         execute('clean')
         execute('env-setup')
-        execute('data')
-        execute('plot')
+        execute('brickify')
 
-    elif action_arg == 'plot':
-        pass
+    elif action_arg == 'brickify':
+        from src.execute import automatic_OR
+        
+        filename = automatic_OR(filename='output.ttl')
+    
+        # TODO: transfer to load_data_and_api.sh file
+        os.system('python brick-builder/make.py brick_builder_example.txt:' + filename)
 
     else:
         print('Please specify a valid argument!')
 
 if __name__ == "__main__":
-    filename = automatic_OR(filename='output.ttl')
-    
-    # TODO: transfer to load_data_and_api.sh file
-    os.system('git clone https://github.com/gtfierro/brick-builder')
-    os.system('python brick-builder/make.py brick_builder_example.txt:' + filename)
-
-    # action = sys.argv[1]
-    # need to change
-    # execute(action)
+    action = sys.argv[1]
+    execute(action)
