@@ -1,6 +1,6 @@
 # AutoBrickify: A system for end-to-end automation of building point labels to Brick turtle files
 
-## Instructions (*WIP*)
+## Instructions
 
 ### Step 1
 Clone the repository and cd into the root directory.
