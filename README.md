@@ -2,15 +2,10 @@
 
 ## Setup
 
-### Step 1
 Clone the repository and cd into the root directory.
 
-`git clone https://github.com/Advitya17/AutoBrickify`
+`git clone https://github.com/Advitya17/AutoBrickify` & `cd AutoBrickify`
 
-### Step 2
-`cd AutoBrickify`
-
-### Step 3
 Clone the repository and cd into the root directory.
 
 `python run.py env-setup`
