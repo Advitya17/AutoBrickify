@@ -4,7 +4,7 @@ Consider a point label metadata string example -
 
 `EBU3B.1ST-FLR.RM-1244.VAV-1N25.ZN-T`
 
-Assuming '.' as a delimiter, the string above will be split into 5 parts. Hence, the user will be required to specify a list in the `point_label_format` of length 5 in the data-params.json file to specify how a column of each part should be treated/parsed.
+Assuming '.' as a delimiter, the string above will be split into 5 parts. Hence, the user will be required to specify a list in the `point_label_format` of length 5 in the data-params.json file to sequentially specify how a column of each part should be treated/parsed.
 
 Every single element of the list should be specified as per one of three possibilities:
 1. `null` if the part is of no use.
