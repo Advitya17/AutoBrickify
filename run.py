@@ -17,11 +17,12 @@ def run(action_arg):
 
     elif action_arg == 'env-setup':
         # If need to install requirements:
-        os.system('pip install -r requirements.txt --quiet')
-        print('Requirements installed!')
         
         os.system('chmod +x load_api_and_data.sh')
         os.system('sh load_api_and_data.sh')
+        
+        os.system('pip install -r brick-builder/requirements.txt --quiet')
+        print('Requirements installed!')
 
     elif action_arg == 'all':
         execute('clean')
