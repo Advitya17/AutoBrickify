@@ -13,7 +13,7 @@ from datetime import timedelta
 from cycler import cycler
 
 from glob import glob
-from utils import *
+from utils import Schema, recon_api_inference
 
 # RETRYLIMIT = 2
 #
@@ -34,7 +34,7 @@ def validate_plf(point_label_col):
 
     num_cols = 0
     flattened_plcs = []
-    for i in point_label_col:
+    for pl in point_label_col:
         if pl is None:
             continue
         elif type(pl) == str:
@@ -45,11 +45,11 @@ def validate_plf(point_label_col):
         elif type(pl) == list:
             for p in pl:
                 assert type(
-                    pl) == str, 'invalid type for nested col name {0}'.format(pl)
-                assert pl in Schema.col_list, '{0} is an invalid col name'.format(
-                    pl)
+                    p) == str, 'invalid type for nested col name {0}'.format(p)
+                assert p in Schema.col_list, '{0} is an invalid col name'.format(
+                    p)
                 num_cols += 1
-                flattened_plcs.append(pl)
+                flattened_plcs.append(p)
         else:
             raise TypeError  # invalid point label format type
 
@@ -66,11 +66,11 @@ def get_split_col_names(point_label_format):
 
     for pl in point_label_format:
         if pl is None:
-            res.append(Schema.temp_col)
+            split_cols.append(Schema.temp_col)
         elif type(pl) == str:
-            res.append(pl)
+            split_cols.append(pl)
         elif type(pl) == list:
-            res.append(pl[0])
+            split_cols.append(pl[0])
             replications[pl[0]] = pl[1:]
         else:
             raise TypeError  # invalid point label format type
@@ -78,20 +78,20 @@ def get_split_col_names(point_label_format):
     return split_cols, replications
 
 
-def get_ordered_cols(split_cols, replications):
-    """See if needed"""
-    ordered_cols = []
-    for sc in split_cols:
-        if sc not in replications:
-            ordered_cols.append(sc)
-        else:
-            for c in replications[sc]:
-                df[c] = df[sc]
-                ordered_cols.append(c)
-    return ordered_cols
+# def get_ordered_cols(split_cols, replications, df):
+#     """See if needed"""
+#     ordered_cols = []
+#     for sc in split_cols:
+#         if sc not in replications:
+#             ordered_cols.append(sc)
+#         else:
+#             for c in replications[sc]:
+#                 df[c] = df[sc]
+#                 ordered_cols.append(c)
+#     return ordered_cols
 
 
-def automatic_OR():
+def automatic_OR(filename):
     """Automates work of Open Refine"""
     # load config
     config = json.load(open('config/data-params.json'))
@@ -125,7 +125,6 @@ def automatic_OR():
     df = df[Schema.col_list]  # get_ordered_cols(split_cols, replications)
 
     df = df.dropna() if drop_null_rows else df
-    n = len(df)
 
     # needed ??
     df[Schema.ahu_col] = Schema.ahu_prefix + df[Schema.ahu_col].str.replace(Schema.ahu_prefix[:-1].lower(),

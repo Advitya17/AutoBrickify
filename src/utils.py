@@ -1,5 +1,9 @@
-import os, sys, re
+import os
+import sys
+import re
 import numpy as np
+import brickschema
+
 
 class Schema:
     point_label_col = 'PointLabel'
@@ -12,8 +16,10 @@ class Schema:
     ahu_prefix = 'AHU_'
     vav_prefix = 'VAV_'
 
+
 def random_idx(n):
     return np.random.randint(0, n)
+
 
 metadata = {
     "name": "Brick Reconciliation Service",
@@ -31,7 +37,7 @@ def flatten(lol):
     return [x for sl in lol for x in sl]
 
 
-def resolve(q):
+def recon_api_inference(q):
     """
     q has fields:
     - query: string of the label that needs to be converted to a Brick type
@@ -64,14 +70,7 @@ def resolve(q):
     print('returning', res)
     return res
 
-def recon_api_inference():
-    """
-    TODO!!
-    """
-    pass
 
 def clean_extra_contents():
     os.system('rm -rf ./brick-builder')
     # os.system('rm -rf src/building_depot data plot logs ./config/sensor_uuids.json')
-
-
