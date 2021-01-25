@@ -1,22 +1,28 @@
 # AutoBrickify: A system for end-to-end automation of building point labels to Brick turtle files
 
-## Instructions (*WIP*)
+## Setup
 
-### Step 1
 Clone the repository and cd into the root directory.
 
-`git clone https://github.com/Advitya17/AutoBrickify`
+`git clone https://github.com/Advitya17/AutoBrickify` & `cd AutoBrickify`
 
+Then run the command below to setup the tool environment.
 
-### Step 2
+`python run.py env-setup`
+
+This'll print a message to the console at the end to confirm setup.
+
+## Instructions
+
+### Step 1
 Specify your configurations in config/data-params.json. 
 
 Detailed instructions are available in the `config/README.md` file in this repository.
 
 
-### Step 3
+### Step 2
 Run the project from the root directory.
 
 `python run.py`
 
-Turtle object will be generated in the root directory.
+Your Turtle object file (`output.ttl`) will be generated in the root directory!
