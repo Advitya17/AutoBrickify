@@ -54,6 +54,7 @@ def recon_api_inference(q):
     tags = map(str.lower, re.split(r'[.:\-_ ]', q))
     tags = list(tags)
     brick_tags = flatten([tagmap.get(tag.lower(), [tag]) for tag in tags])
+    brick_tags = list(filter(lambda x: x != '', brick_tags))
 
     # TODO: Do I really need this?
     # if q.get('type') == 'PointClass':
@@ -74,6 +75,7 @@ def recon_api_inference(q):
     #     })
     # print('returning', res)
     return most_likely[0]
+
 
 def clean_extra_contents():
     os.system('rm -rf ./brick-builder')

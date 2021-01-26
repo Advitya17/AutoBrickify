@@ -122,9 +122,8 @@ def automatic_OR(filename):
     # print(split_cols)
     # print(df[Schema.point_label_col].str.split(pat, expand=True))
     col_split_res = df[Schema.point_label_col].str.split(pat, expand=True)
-    length_diff = len(col_split_res) - len(split_cols)
+    length_diff = col_split_res.shape[1] - len(split_cols)
     split_cols += [Schema.temp_col for _ in range(length_diff)]
-
     df[split_cols] = col_split_res
     # except: # TODO: find out error type
     #     print('Number of columns not matching number of words separated from the \
@@ -143,6 +142,7 @@ def automatic_OR(filename):
                                                                             '').replace(Schema.ahu_prefix[:-1], '')
 
     # STEP 2: RECONCILIATION API INJECTION
+    print(df)
     df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(
         recon_api_inference)
 
