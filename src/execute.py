@@ -133,9 +133,10 @@ def automatic_OR(filename):
                                                                             '').replace(Schema.ahu_prefix[:-1], '')
     df[Schema.vav_col] = Schema.vav_prefix + df[Schema.vav_col].str.replace(Schema.vav_prefix[:-1].lower(),
                                                                             '').replace(Schema.ahu_prefix[:-1], '')
-    print(df)
+
     # STEP 2: RECONCILIATION API INJECTION
-    df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(recon_api_inference)
+    df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(
+        recon_api_inference)
 
     filename = fp.split('.')[0] + '_processed.csv'
     df.to_csv(filename, index=False)
