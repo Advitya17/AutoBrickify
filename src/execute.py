@@ -15,6 +15,8 @@ from cycler import cycler
 from glob import glob
 from utils import Schema, recon_api_inference
 
+pd.set_option('display.max_columns', None)
+
 # RETRYLIMIT = 2
 #
 # # create logging directory if not exists yet
@@ -26,7 +28,7 @@ from utils import Schema, recon_api_inference
 # logging.basicConfig(filename=f'logs/{arrow.now().format()}.log',level=logging.DEBUG)
 
 
-def validate_plf(point_label_col):
+def validate_plf(point_label_format):
     # TODO: some assumptions may need to be validated
 
     # assert all(cn in repr(point_label_col) for c in col_list), 'all column names are not utilized!'
@@ -34,7 +36,7 @@ def validate_plf(point_label_col):
 
     num_cols = 0
     flattened_plcs = []
-    for pl in point_label_col:
+    for pl in point_label_format:
         if pl is None:
             continue
         elif type(pl) == str:
@@ -54,7 +56,7 @@ def validate_plf(point_label_col):
             raise TypeError  # invalid point label format type
 
     assert num_cols == len(
-        Schema.col_list), 'all column names are not utilized!'
+        Schema.col_list)-1, 'all column names are not utilized!'
     assert len(set(flattened_plcs)
                ) == num_cols, 'number of column names do not match!'
 
@@ -105,7 +107,7 @@ def automatic_OR(filename):
     drop_null_rows = config['drop_null_rows']
 
     # INFO: naming conventions followed in column names
-    validate_plf(point_label_col)
+    validate_plf(point_label_format)
 
     df = pd.read_csv(fp)
 
@@ -131,10 +133,9 @@ def automatic_OR(filename):
                                                                             '').replace(Schema.ahu_prefix[:-1], '')
     df[Schema.vav_col] = Schema.vav_prefix + df[Schema.vav_col].str.replace(Schema.vav_prefix[:-1].lower(),
                                                                             '').replace(Schema.ahu_prefix[:-1], '')
-
+    print(df)
     # STEP 2: RECONCILIATION API INJECTION
-    df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(
-        recon_api_inference)
+    df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(recon_api_inference)
 
     filename = fp.split('.')[0] + '_processed.csv'
     df.to_csv(filename, index=False)

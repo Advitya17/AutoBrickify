@@ -1,3 +1,4 @@
+from abbrmap import abbrmap as tagmap
 import os
 import sys
 import re
@@ -30,6 +31,8 @@ metadata = {
 }
 
 inf = brickschema.inference.TagInferenceSession(approximate=True)
+# TODO: Provide framework to customize in config
+LIMIT = 1
 
 
 def flatten(lol):
@@ -46,30 +49,31 @@ def recon_api_inference(q):
     - properties: optional map of property idents to values
     - type_strict: [any, all, should] for strictness on the types returned
     """
-    limit = int(q.get('limit', 10))
+    # limit = int(q.get('limit', 10))
     # break query up into potential tags
-    tags = map(str.lower, re.split(r'[.:\-_ ]', q.get('query', '')))
+    tags = map(str.lower, re.split(r'[.:\-_ ]', q))
     tags = list(tags)
     brick_tags = flatten([tagmap.get(tag.lower(), [tag]) for tag in tags])
 
-    if q.get('type') == 'PointClass':
-        brick_tags += ['Point']
-    elif q.get('type') == 'EquipmentClass':
-        brick_tags += ['Equipment']
+    # TODO: Do I really need this?
+    # if q.get('type') == 'PointClass':
+    #     brick_tags += ['Point']
+    # elif q.get('type') == 'EquipmentClass':
+    #     brick_tags += ['Equipment']
 
-    res = []
-    most_likely, leftover = inf.most_likely_tagsets(brick_tags, limit)
-    for ml in most_likely:
-        res.append({
-            'id': q['query'],
-            'name': ml,
-            'score': (len(brick_tags) - len(leftover)) / len(brick_tags),
-            'match': len(leftover) == 0,
-            'type': [{"id": "PointClass", "name": "PointClass"}],
-        })
-    print('returning', res)
-    return res
-
+    # res = []
+    most_likely, leftover = inf.most_likely_tagsets(brick_tags, LIMIT)
+    # Disabling framework to return multiple likelihood scores
+    # for ml in most_likely:
+    #     res.append({
+    #         'id': q,
+    #         'name': ml,
+    #         'score': (len(brick_tags) - len(leftover)) / len(brick_tags),
+    #         'match': len(leftover) == 0,
+    #         'type': [{"id": "PointClass", "name": "PointClass"}],
+    #     })
+    # print('returning', res)
+    return most_likely[0]
 
 def clean_extra_contents():
     os.system('rm -rf ./brick-builder')

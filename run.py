@@ -34,7 +34,7 @@ def run(action_arg):
 
         # TODO: transfer to load_data_and_api.sh file
         os.system(
-            'python brick-builder/make.py brick_builder_example.txt:' + filename)
+            'python ../brick-builder/make.py brick_builder_template.txt:' + filename)
     else:
         print('Please specify a valid argument!')
 
