@@ -1,5 +1,5 @@
 {
-    "fp": "data/table_743_v1.csv",
+    "fp": "data/table_999_v1.csv",
     
     "point_label_col": "jci_name",
     
@@ -14,9 +14,9 @@
         "UpstreamAHU",
         "ZoneName",
         "VAVName",
-        "BrickClass",
-        null],
-    
+        "BrickClass"
+        ],
+
     "drop_null_rows": true
 }
 

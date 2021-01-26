@@ -117,7 +117,13 @@ def automatic_OR(filename):
 
     split_cols, replications = get_split_col_names(point_label_format)
     # try:
-    df[split_cols] = df[Schema.point_label_col].str.split(pat, expand=True)
+
+    # debug
+    # print(split_cols)
+    # print(df[Schema.point_label_col].str.split(pat, expand=True))
+
+    df[split_cols] = df[Schema.point_label_col].str.split(pat,
+                                                          expand=True)
     # except: # TODO: find out error type
     #     print('Number of columns not matching number of words separated from the \
     #     point labels with the specified delimiter')
