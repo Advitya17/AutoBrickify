@@ -121,9 +121,11 @@ def automatic_OR(filename):
     # debug
     # print(split_cols)
     # print(df[Schema.point_label_col].str.split(pat, expand=True))
+    col_split_res = df[Schema.point_label_col].str.split(pat, expand=True)
+    length_diff = len(col_split_res) - len(split_cols)
+    split_cols += [Schema.temp_col for _ in range(length_diff)]
 
-    df[split_cols] = df[Schema.point_label_col].str.split(pat,
-                                                          expand=True)
+    df[split_cols] = col_split_res
     # except: # TODO: find out error type
     #     print('Number of columns not matching number of words separated from the \
     #     point labels with the specified delimiter')
