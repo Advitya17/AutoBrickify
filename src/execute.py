@@ -142,7 +142,7 @@ def automatic_OR(filename):
                                                                             '').replace(Schema.ahu_prefix[:-1], '')
 
     # STEP 2: RECONCILIATION API INJECTION
-    print(df)
+    # print(df)
     df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(
         recon_api_inference)
 
