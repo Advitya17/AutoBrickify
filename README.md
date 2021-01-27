@@ -1,4 +1,4 @@
-# AutoBrickify: A system for end-to-end automation of building point labels to Brick turtle files
+# AutoBrick: A system for end-to-end automation of building point labels to Brick turtle files
 
 ## Setup
 
