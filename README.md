@@ -8,7 +8,7 @@ Clone the repository and cd into the root directory.
 
 Then run the command below to setup the tool environment.
 
-`python run.py env-setup`
+`python run.py env-setup` (alternative you can build with the Dockerfile!)
 
 This'll print a message to the console at the end to confirm setup.
 
