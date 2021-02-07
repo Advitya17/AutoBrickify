@@ -1,5 +1,4 @@
 {
-    "dockerhub-id": "advitya17/180a_result_replication",
     "GitHub Repository": "https://github.com/Advitya17/AutoBrickify.git",
-    "DockerHub Repository": "<dockerhub repo url>"
+    "DockerHub Repository": "advitya17/autobrickify"
 }
