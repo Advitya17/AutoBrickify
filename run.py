@@ -23,7 +23,7 @@ def run(action_arg):
         os.system('pip install -r ../brick-builder/requirements.txt --quiet')
         print('Requirements installed!')
 
-    elif action_arg == 'all':
+    elif action_arg == 'all' or action_arg == 'test':
         run('clean')
         run('env-setup')
         run('brickify')
