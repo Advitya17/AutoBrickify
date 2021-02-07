@@ -12,8 +12,7 @@ LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 USER root
 
 # 3) install packages (TODO: revise)
-RUN pip install --no-cache-dir scipy arrow==0.15.8 certifi==2020.6.20 chardet==3.0.4 cycler==0.10.0 idna==2.10 kiwisolver==1.2.0 \
-matplotlib==3.3.0 numpy==1.19.1 Pillow==7.2.0 pyparsing==2.4.7 python-dateutil==2.8.1 requests==2.24.0 six==1.15.0 urllib3==1.25.10
+RUN pip install --no-cache-dir brickschema rdflib
 
 # Override command to disable running jupyter notebook at launch
 # CMD ["/bin/bash"]
