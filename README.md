@@ -14,6 +14,10 @@ This'll print a message to the console at the end to confirm setup.
 
 ## Instructions
 
+### `python run.py test` (For Checkpoint Submission)
+
+### OR ... 
+
 ### Step 1
 Specify your configurations in config/data-params.json. 
 
