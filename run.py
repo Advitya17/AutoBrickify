@@ -24,7 +24,8 @@ def run(action_arg):
         print('Requirements installed!')
 
     elif action_arg == 'all' or action_arg == 'test':
-        run('clean')
+        # run('clean')
+        os.system('rm -rf ./brick-builder')
         run('env-setup')
         run('brickify')
 
