@@ -25,7 +25,7 @@ def run(action_arg):
 
     elif action_arg == 'all' or action_arg == 'test':
         # run('clean')
-        os.system('rm -rf ./brick-builder')
+        os.system('rm -rf ../brick-builder')
         run('env-setup')
         run('brickify')
 
