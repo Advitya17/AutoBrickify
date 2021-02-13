@@ -104,6 +104,7 @@ def automatic_OR(filename):
     # converts to regex string as per user preference
     pat = pat.encode('unicode-escape').decode() if regex else pat
     point_label_format = config['point_label_format']
+    add_bc_cols = config['additional_brick_class_info_columns']
     drop_null_rows = config['drop_null_rows']
 
     # INFO: naming conventions followed in column names
@@ -116,11 +117,7 @@ def automatic_OR(filename):
     df = df.rename({point_label_col: Schema.point_label_col}, axis=1)
 
     split_cols, replications = get_split_col_names(point_label_format)
-    # try:
-
-    # debug
-    # print(split_cols)
-    # print(df[Schema.point_label_col].str.split(pat, expand=True))
+    
     col_split_res = df[Schema.point_label_col].str.split(pat, expand=True)
     length_diff = col_split_res.shape[1] - len(split_cols)
     split_cols += [Schema.temp_col for _ in range(length_diff)]
@@ -142,9 +139,12 @@ def automatic_OR(filename):
                                                                             '').replace(Schema.ahu_prefix[:-1], '')
 
     # STEP 2: RECONCILIATION API INJECTION
-    # print(df)
-    df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(
-        recon_api_inference)
+    
+    # adding additional tokens for brick class inference
+    for bc_col in add_bc_cols:
+        df[Schema.brick_class_col] += ' ' + df[bc_col]
+    
+    df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(recon_api_inference)
 
     filename = fp.split('.')[0] + '_processed.csv'
     df.to_csv(filename, index=False)
