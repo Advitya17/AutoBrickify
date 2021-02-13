@@ -98,7 +98,7 @@ def automatic_OR(filename):
     # load config
     config = json.load(open('config/data-params.json'))
     fp = config['fp']
-    point_label_col = config['point_label_col']
+    point_label_col = config['point_label_cols']
     pat = config['delimiter']['pattern']
     regex = config['delimiter']['regex']
     # converts to regex string as per user preference
@@ -106,6 +106,12 @@ def automatic_OR(filename):
     point_label_format = config['point_label_format']
     add_bc_cols = config['additional_brick_class_info_columns']
     drop_null_rows = config['drop_null_rows']
+    
+#     "point_label_cols": {
+#         "jci_name": { "pattern": ".", "regex": false, "point_label_format": 
+#                      [null, "UpstreamAHU", "ZoneName", "VAVName", "BrickClass"] }
+#     },
+    # TODO LOGIC & REFACTORING !!
 
     # INFO: naming conventions followed in column names
     validate_plf(point_label_format)
@@ -113,7 +119,7 @@ def automatic_OR(filename):
     df = pd.read_csv(fp)
 
     # STEP 1: AUTOMATING ALL DATA TRANSFORMATIONS
-    df = df[[point_label_col]]
+    df = df[[plc for plc in point_label_cols]]
     df = df.rename({point_label_col: Schema.point_label_col}, axis=1)
 
     split_cols, replications = get_split_col_names(point_label_format)
