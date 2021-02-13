@@ -16,6 +16,8 @@
         "VAVName",
         "BrickClass"
         ],
+    
+    "additional_brick_class_info_columns": null,
 
     "drop_null_rows": true
 }
