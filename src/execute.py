@@ -142,7 +142,7 @@ def automatic_OR(filename):
     df = df.drop(Schema.temp_col, axis=1)
 
     # ordered for Brick Builder
-    df = df[Schema.col_list]  # get_ordered_cols(split_cols, replications)
+    df = df[Schema.col_list + add_bc_cols]  # get_ordered_cols(split_cols, replications)
 
     df = df.dropna() if drop_null_rows else df
 
