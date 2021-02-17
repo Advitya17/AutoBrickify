@@ -157,6 +157,7 @@ def automatic_OR(filename):
     # adding additional tokens for brick class inference
     for bc_col in add_bc_cols:
         df[Schema.brick_class_col] += ' ' + df[bc_col]
+        df = df.drop(bc_col, axis=1)
     
     df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(recon_api_inference)
 
