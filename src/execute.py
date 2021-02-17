@@ -143,6 +143,11 @@ def automatic_OR(filename):
 
     # ordered for Brick Builder
     df = df[Schema.col_list + add_bc_cols]  # get_ordered_cols(split_cols, replications)
+    
+    # adding additional tokens for brick class inference
+    for bc_col in add_bc_cols:
+        df[Schema.brick_class_col] += ' ' + df[bc_col]
+        df = df.drop(bc_col, axis=1)
 
     df = df.dropna() if drop_null_rows else df
 
@@ -153,11 +158,6 @@ def automatic_OR(filename):
                                                                             '').replace(Schema.ahu_prefix[:-1], '')
 
     # STEP 2: RECONCILIATION API INJECTION
-    
-    # adding additional tokens for brick class inference
-    for bc_col in add_bc_cols:
-        df[Schema.brick_class_col] += ' ' + df[bc_col]
-        df = df.drop(bc_col, axis=1)
     
     df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(recon_api_inference)
 
