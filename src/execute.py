@@ -125,17 +125,16 @@ def automatic_OR(filename):
     split_cols, replications = get_split_col_names(point_label_format)
     
     col_split_res = df[Schema.point_label_col].str.split(pat, expand=True)
-    print(split_cols)
-    print(col_split_res.columns)
+    
+    # padding
+    length_diff = col_split_res.shape[1] - len(split_cols)
+    split_cols += [Schema.temp_col for _ in range(length_diff)]
+    
     df[split_cols] = col_split_res
     
     for key in replications:
         for rep_col in replications[key]:
             df[rep_col] = df[key]
-    
-    # padding, see if needed.
-    # length_diff = col_split_res.shape[1] - len(split_cols)
-    # split_cols += [Schema.temp_col for _ in range(length_diff)]
     
     # except: # TODO: find out error type
     #     print('Number of columns not matching number of words separated from the \
