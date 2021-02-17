@@ -98,7 +98,7 @@ def automatic_OR(filename):
     # load config
     config = json.load(open('config/data-params.json'))
     fp = config['fp']
-    point_label_col = config['point_label_cols']
+    point_label_col = config['point_label_col']
     pat = config['delimiter']['pattern']
     regex = config['delimiter']['regex']
     # converts to regex string as per user preference
@@ -119,7 +119,7 @@ def automatic_OR(filename):
     df = pd.read_csv(fp)
 
     # STEP 1: AUTOMATING ALL DATA TRANSFORMATIONS
-    df = df[[plc for plc in point_label_cols]]
+    df = df[[point_label_col]]
     df = df.rename({point_label_col: Schema.point_label_col}, axis=1)
 
     split_cols, replications = get_split_col_names(point_label_format)
