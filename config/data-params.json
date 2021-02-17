@@ -6,9 +6,9 @@
     "delimiter": { 
         "pattern": ".", 
         "regex": false 
-    }
+    },
     
-    "point_label_format": ["UpstreamAHU", ["ZoneName", "VAVName"], "BrickClass"]
+    "point_label_format": ["UpstreamAHU", ["ZoneName", "VAVName"], "BrickClass"],
     
     "additional_brick_class_info_columns": ["description", "unit"],
 
