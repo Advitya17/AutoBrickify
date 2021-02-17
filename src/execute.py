@@ -119,7 +119,7 @@ def automatic_OR(filename):
     df = pd.read_csv(fp)
 
     # STEP 1: AUTOMATING ALL DATA TRANSFORMATIONS
-    df = df[[point_label_col]]
+    df = df[[point_label_col] + add_bc_cols]
     df = df.rename({point_label_col: Schema.point_label_col}, axis=1)
 
     split_cols, replications = get_split_col_names(point_label_format)
