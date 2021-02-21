@@ -29,7 +29,7 @@ def run(action_arg):
         filename = automatic_OR(filename='output.ttl')
 
         os.system(
-            'python ../brick-builder/make.py brick_builder_template.txt:' + filename)
+            'python ../brick-builder/make.py brick_builder_template.txt:' + 'output/' + filename)
     else:
         print('Please specify a valid argument!')
 
