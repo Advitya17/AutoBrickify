@@ -16,8 +16,6 @@ def run(action_arg):
         clean_extra_contents()
 
     elif action_arg == 'env-setup':
-        # If need to install requirements:
-
         os.system('chmod +x dependencies.sh')
         os.system('sh dependencies.sh')
         print('Requirements installed!')
