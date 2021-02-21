@@ -20,12 +20,11 @@ def run(action_arg):
 
         os.system('chmod +x load_api_and_data.sh')
         os.system('sh load_api_and_data.sh')
-        os.system('pip install -r ../brick-builder/requirements.txt --quiet')
+        # os.system('pip install -r ../brick-builder/requirements.txt --quiet')
         print('Requirements installed!')
 
     elif action_arg == 'all' or action_arg == 'test':
-        # run('clean')
-        os.system('rm -rf ../brick-builder')
+        run('clean')
         run('env-setup')
         run('brickify')
 
