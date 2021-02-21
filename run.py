@@ -26,7 +26,7 @@ def run(action_arg):
 
     elif action_arg == 'brickify':
         from src.execute import automatic_OR
-        filename = automatic_OR(filename='output.ttl')
+        filename = automatic_OR()
 
         os.system(
             'python ../brick-builder/make.py brick_builder_template.txt:' + 'output/' + filename)
