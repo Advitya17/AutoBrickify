@@ -78,5 +78,5 @@ def recon_api_inference(q):
 
 
 def clean_extra_contents():
-    os.system('rm -rf ./brick-builder')
+    os.system('rm -rf ../brick-builder')
     # os.system('rm -rf src/building_depot data plot logs ./config/sensor_uuids.json')
