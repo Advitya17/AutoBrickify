@@ -18,9 +18,8 @@ def run(action_arg):
     elif action_arg == 'env-setup':
         # If need to install requirements:
 
-        os.system('chmod +x load_api_and_data.sh')
-        os.system('sh load_api_and_data.sh')
-        # os.system('pip install -r ../brick-builder/requirements.txt --quiet')
+        os.system('chmod +x dependencies.sh')
+        os.system('sh dependencies.sh')
         print('Requirements installed!')
 
     elif action_arg == 'all' or action_arg == 'test':
