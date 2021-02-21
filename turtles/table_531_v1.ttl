@@ -1,0 +1,162 @@
+@prefix bldg: <http://example.org/building#> .
+@prefix brick: <https://brickschema.org/schema/1.1/Brick#> .
+
+bldg:VAV_AH-1 a brick:VAV ;
+    brick:feeds bldg:RM-M1000 ;
+    brick:hasPt bldg:CMRR.1ST-FLR.RM-M1000.AH-1.CLG-VLV,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-1.FILT-DP,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-1.HTG-VLV,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-1.MIN-RUNTIME,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-1.SA-SP,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-1.SA-T,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-1.SASP-STPT,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-1.SAT-STPT,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-1.SF-VFD ;
+    brick:isFedBy bldg:AHU_1ST-FLR .
+
+bldg:VAV_AH-2 a brick:VAV ;
+    brick:feeds bldg:RM-M1000 ;
+    brick:hasPt bldg:CMRR.1ST-FLR.RM-M1000.AH-2.CLG-VLV,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-2.FILT-DP,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-2.HTG-VLV,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-2.MIN-RUNTIME,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-2.SA-SP,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-2.SA-T,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-2.SASP-STPT,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-2.SAT-STPT,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-2.SF-VFD ;
+    brick:isFedBy bldg:AHU_1ST-FLR .
+
+bldg:VAV_AH-3 a brick:VAV ;
+    brick:feeds bldg:RM-M1000 ;
+    brick:hasPt bldg:CMRR.1ST-FLR.RM-M1000.AH-3.CLG-VLV,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-3.FILT-DP,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-3.HTG-VLV,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-3.MIN-RUNTIME,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-3.SA-SP,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-3.SA-T,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-3.SASP-STPT,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-3.SAT-STPT,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-3.SF-VFD ;
+    brick:isFedBy bldg:AHU_1ST-FLR .
+
+bldg:VAV_AH-4 a brick:VAV ;
+    brick:feeds bldg:RM-M1000 ;
+    brick:hasPt bldg:CMRR.1ST-FLR.RM-M1000.AH-4.CLG-VLV,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-4.FILT-DP,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-4.HTG-VLV,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-4.MIN-RUNTIME,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-4.SA-SP,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-4.SA-T,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-4.SASP-STPT,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-4.SAT-STPT,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-4.SF-VFD ;
+    brick:isFedBy bldg:AHU_1ST-FLR .
+
+bldg:VAV_AH-5 a brick:VAV ;
+    brick:feeds bldg:RM-M1000 ;
+    brick:hasPt bldg:CMRR.1ST-FLR.RM-M1000.AH-5.CLG-VLV,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-5.FILT-DP,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-5.HTG-VLV,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-5.MIN-RUNTIME,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-5.SA-SP,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-5.SA-T,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-5.SASP-STPT,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-5.SAT-STPT,
+        bldg:CMRR.1ST-FLR.RM-M1000.AH-5.SF-VFD ;
+    brick:isFedBy bldg:AHU_1ST-FLR .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-1.CLG-VLV a brick:Valve_Command .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-1.FILT-DP a brick:Filter .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-1.HTG-VLV a brick:Valve_Command .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-1.MIN-RUNTIME a brick:Location .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-1.SA-SP a brick:Supply_Air_Static_Pressure_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-1.SA-T a brick:Location .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-1.SASP-STPT a brick:Supply_Air_Static_Pressure_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-1.SAT-STPT a brick:Supply_Air_Temperature_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-1.SF-VFD a brick:Supply_Fan .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-2.CLG-VLV a brick:Valve_Command .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-2.FILT-DP a brick:Filter .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-2.HTG-VLV a brick:Valve_Command .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-2.MIN-RUNTIME a brick:Location .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-2.SA-SP a brick:Supply_Air_Static_Pressure_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-2.SA-T a brick:Location .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-2.SASP-STPT a brick:Supply_Air_Static_Pressure_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-2.SAT-STPT a brick:Supply_Air_Temperature_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-2.SF-VFD a brick:Supply_Fan .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-3.CLG-VLV a brick:Valve_Command .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-3.FILT-DP a brick:Filter .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-3.HTG-VLV a brick:Valve_Command .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-3.MIN-RUNTIME a brick:Location .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-3.SA-SP a brick:Supply_Air_Static_Pressure_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-3.SA-T a brick:Location .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-3.SASP-STPT a brick:Supply_Air_Static_Pressure_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-3.SAT-STPT a brick:Supply_Air_Temperature_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-3.SF-VFD a brick:Supply_Fan .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-4.CLG-VLV a brick:Valve_Command .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-4.FILT-DP a brick:Filter .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-4.HTG-VLV a brick:Valve_Command .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-4.MIN-RUNTIME a brick:Location .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-4.SA-SP a brick:Supply_Air_Static_Pressure_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-4.SA-T a brick:Location .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-4.SASP-STPT a brick:Supply_Air_Static_Pressure_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-4.SAT-STPT a brick:Supply_Air_Temperature_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-4.SF-VFD a brick:Supply_Fan .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-5.CLG-VLV a brick:Valve_Command .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-5.FILT-DP a brick:Filter .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-5.HTG-VLV a brick:Valve_Command .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-5.MIN-RUNTIME a brick:Location .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-5.SA-SP a brick:Supply_Air_Static_Pressure_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-5.SA-T a brick:Location .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-5.SASP-STPT a brick:Supply_Air_Static_Pressure_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-5.SAT-STPT a brick:Supply_Air_Temperature_Setpoint .
+
+bldg:CMRR.1ST-FLR.RM-M1000.AH-5.SF-VFD a brick:Supply_Fan .
+
+bldg:AHU_1ST-FLR a brick:AHU .
+
+bldg:RM-M1000 a brick:HVAC_Zone .
+
