@@ -1,4 +1,4 @@
-# Python module requirements
+# Python module requirements (Not currently needed)
 
 brickschema
 rdflib
