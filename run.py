@@ -23,7 +23,6 @@ def run(action_arg):
         print('Requirements installed!')
 
     elif action_arg == 'all' or action_arg == 'test':
-        run('clean')
         run('env-setup')
         run('brickify')
 
@@ -31,7 +30,6 @@ def run(action_arg):
         from src.execute import automatic_OR
         filename = automatic_OR(filename='output.ttl')
 
-        # TODO: transfer to load_data_and_api.sh file
         os.system(
             'python ../brick-builder/make.py brick_builder_template.txt:' + filename)
     else:
