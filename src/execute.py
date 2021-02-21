@@ -93,7 +93,7 @@ def get_split_col_names(point_label_format):
 #     return ordered_cols
 
 
-def automatic_OR(filename):
+def automatic_OR():
     """Automates work of Open Refine"""
     # load config
     config = json.load(open('config/data-params.json'))
@@ -161,7 +161,7 @@ def automatic_OR(filename):
     
     df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(recon_api_inference)
 
-    filename = fp.split('.')[0] + '_processed.csv'
-    df.to_csv(filename, index=False)
+    filename = fp.split('.')[0]
+    df.to_csv(filename + '_processed.csv', index=False)
 
-    return filename
+    return filename + '.ttl'
