@@ -161,7 +161,7 @@ def automatic_OR():
     
     df[Schema.brick_class_col] = df[Schema.brick_class_col].apply(recon_api_inference)
 
-    filename = fp.split('.')[0]
-    df.to_csv(filename + '_processed.csv', index=False)
+    filename = fp.split('.')[0] + '_processed.csv'
+    df.to_csv(filename, index=False)
 
-    return filename + '.ttl'
+    return filename
