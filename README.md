@@ -12,7 +12,7 @@ Then run the command below to setup the tool environment.
 
 This'll print a message to the console at the end to confirm setup.
 
-#### `python run.py test` (For Checkpoint Submission)
+#### `python run.py test` (Only for Checkpoint Assignment Submission, can ignore otherwise)
 
 ## Instructions
 
