@@ -1,4 +1,4 @@
-from abbrmap import abbrmap as tagmap
+from abbrmap import abbrmap as tagmap # TODO: change this to original recon API
 import os
 import sys
 import re
