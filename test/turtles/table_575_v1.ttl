@@ -1,0 +1,98 @@
+@prefix bldg: <http://example.org/building#> .
+@prefix brick: <https://brickschema.org/schema/1.1/Brick#> .
+
+bldg:VAV_HP-1A a brick:VAV ;
+    brick:feeds bldg:RM-279 ;
+    brick:hasPt bldg:SDSC.2ND-FL.RM-279.HP-1A.ACTCLG-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1A.ACTHTG-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1A.COM-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1A.OCCCLG-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1A.OCCHTG-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1A.UNOCCCLG-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1A.UNOCCHTG-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1A.ZN-T ;
+    brick:isFedBy bldg:AHU_2ND-FL .
+
+bldg:VAV_HP-1B a brick:VAV ;
+    brick:feeds bldg:RM-279 ;
+    brick:hasPt bldg:SDSC.2ND-FL.RM-279.HP-1B.ACTCLG-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1B.ACTHTG-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1B.COM-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1B.OCCCLG-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1B.OCCHTG-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1B.UNOCCCLG-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1B.UNOCCHTG-STPT,
+        bldg:SDSC.2ND-FL.RM-279.HP-1B.ZN-T ;
+    brick:isFedBy bldg:AHU_2ND-FL .
+
+bldg:VAV_MAU-2 a brick:VAV ;
+    brick:feeds bldg:RM-COMP ;
+    brick:hasPt bldg:SDSC.1ST-FL.RM-COMP.MAU-2.ACTCLG-STPT,
+        bldg:SDSC.1ST-FL.RM-COMP.MAU-2.ACTHTG-STPT,
+        bldg:SDSC.1ST-FL.RM-COMP.MAU-2.ACTSAT-STPT,
+        bldg:SDSC.1ST-FL.RM-COMP.MAU-2.CLGVLV-CMD,
+        bldg:SDSC.1ST-FL.RM-COMP.MAU-2.HTGVLV-CMD,
+        bldg:SDSC.1ST-FL.RM-COMP.MAU-2.OA-T,
+        bldg:SDSC.1ST-FL.RM-COMP.MAU-2.SA-T,
+        bldg:SDSC.1ST-FL.RM-COMP.MAU-2.ZN-T,
+        bldg:SDSC.1ST-FL.RM-COMP.MAU-2.ZNT-STPT ;
+    brick:isFedBy bldg:AHU_1ST-FL .
+
+bldg:AHU_1ST-FL a brick:AHU .
+
+bldg:RM-COMP a brick:HVAC_Zone .
+
+bldg:SDSC.1ST-FL.RM-COMP.MAU-2.ACTCLG-STPT a brick:Setpoint .
+
+bldg:SDSC.1ST-FL.RM-COMP.MAU-2.ACTHTG-STPT a brick:Setpoint .
+
+bldg:SDSC.1ST-FL.RM-COMP.MAU-2.ACTSAT-STPT a brick:Supply_Air_Temperature_Setpoint .
+
+bldg:SDSC.1ST-FL.RM-COMP.MAU-2.CLGVLV-CMD a brick:Valve_Command .
+
+bldg:SDSC.1ST-FL.RM-COMP.MAU-2.HTGVLV-CMD a brick:Valve_Command .
+
+bldg:SDSC.1ST-FL.RM-COMP.MAU-2.OA-T a brick:Outside .
+
+bldg:SDSC.1ST-FL.RM-COMP.MAU-2.SA-T a brick:Equipment .
+
+bldg:SDSC.1ST-FL.RM-COMP.MAU-2.ZN-T a brick:Zone .
+
+bldg:SDSC.1ST-FL.RM-COMP.MAU-2.ZNT-STPT a brick:Temperature_Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1A.ACTCLG-STPT a brick:Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1A.ACTHTG-STPT a brick:Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1A.COM-STPT a brick:Temperature_Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1A.OCCCLG-STPT a brick:Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1A.OCCHTG-STPT a brick:Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1A.UNOCCCLG-STPT a brick:Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1A.UNOCCHTG-STPT a brick:Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1A.ZN-T a brick:Zone .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1B.ACTCLG-STPT a brick:Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1B.ACTHTG-STPT a brick:Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1B.COM-STPT a brick:Temperature_Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1B.OCCCLG-STPT a brick:Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1B.OCCHTG-STPT a brick:Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1B.UNOCCCLG-STPT a brick:Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1B.UNOCCHTG-STPT a brick:Setpoint .
+
+bldg:SDSC.2ND-FL.RM-279.HP-1B.ZN-T a brick:Zone .
+
+bldg:AHU_2ND-FL a brick:AHU .
+
+bldg:RM-279 a brick:HVAC_Zone .
+

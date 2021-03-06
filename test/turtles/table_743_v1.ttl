@@ -1,0 +1,216 @@
+@prefix bldg: <http://example.org/building#> .
+@prefix brick: <https://brickschema.org/schema/1.1/Brick#> .
+
+bldg:VAV_FSD-3 a brick:VAV ;
+    brick:feeds bldg:RM-1200B ;
+    brick:hasPt bldg:EBU3B.1ST-FLR.RM-1200B.FSD-3.FLOW-DIFF,
+        bldg:EBU3B.1ST-FLR.RM-1200B.FSD-3.RA-F,
+        bldg:EBU3B.1ST-FLR.RM-1200B.FSD-3.RADMP-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1200B.FSD-3.SA-FLOW ;
+    brick:isFedBy bldg:AHU_1ST-FLR .
+
+bldg:VAV_VAV-1N22 a brick:VAV ;
+    brick:feeds bldg:RM-1241 ;
+    brick:hasPt bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.ACTCLG-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.ACTHTG-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.CLG.HTG-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.COM-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.DPR-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.HTGVLV-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.SA-FLOW,
+        bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.SA-T,
+        bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.SAFLOW-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.WC-ADJ,
+        bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.ZN-T ;
+    brick:isFedBy bldg:AHU_1ST-FLR .
+
+bldg:VAV_VAV-1N23 a brick:VAV ;
+    brick:feeds bldg:RM-1242 ;
+    brick:hasPt bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.ACTCLG-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.ACTHTG-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.CLG.HTG-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.COM-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.DPR-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.HTGVLV-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.SA-FLOW,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.SA-T,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.SAFLOW-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.WC-ADJ,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.ZN-T ;
+    brick:isFedBy bldg:AHU_1ST-FLR .
+
+bldg:VAV_VAV-1N24 a brick:VAV ;
+    brick:feeds bldg:RM-1242 ;
+    brick:hasPt bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.ACTCLG-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.ACTHTG-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.CLG.HTG-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.COM-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.DPR-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.HTGVLV-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.SA-FLOW,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.SA-T,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.SAFLOW-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.WC-ADJ,
+        bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.ZN-T ;
+    brick:isFedBy bldg:AHU_1ST-FLR .
+
+bldg:VAV_VAV-1N25 a brick:VAV ;
+    brick:feeds bldg:RM-1244 ;
+    brick:hasPt bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.ACTCLG-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.ACTHTG-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.CLG.HTG-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.COM-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.DPR-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.HTGVLV-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.SA-FLOW,
+        bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.SA-T,
+        bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.SAFLOW-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.WC-ADJ,
+        bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.ZN-T ;
+    brick:isFedBy bldg:AHU_1ST-FLR .
+
+bldg:VAV_VAV-1N26 a brick:VAV ;
+    brick:feeds bldg:RM-1243 ;
+    brick:hasPt bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.ACTCLG-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.ACTHTG-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.CLG.HTG-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.COM-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.DPR-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.HTGVLV-CMD,
+        bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.SA-FLOW,
+        bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.SA-T,
+        bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.SAFLOW-STPT,
+        bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.WC-ADJ,
+        bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.ZN-T ;
+    brick:isFedBy bldg:AHU_1ST-FLR .
+
+bldg:EBU3B.1ST-FLR.RM-1200B.FSD-3.FLOW-DIFF a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1200B.FSD-3.RA-F a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1200B.FSD-3.RADMP-CMD a brick:Return_Damper .
+
+bldg:EBU3B.1ST-FLR.RM-1200B.FSD-3.SA-FLOW a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.ACTCLG-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.ACTHTG-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.CLG.HTG-CMD a brick:Command .
+
+bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.COM-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.DPR-CMD a brick:Damper_Command .
+
+bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.HTGVLV-CMD a brick:Valve_Command .
+
+bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.SA-FLOW a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.SA-T a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.SAFLOW-STPT a brick:Supply_Air_Flow_Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.WC-ADJ a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1241.VAV-1N22.ZN-T a brick:Zone .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.ACTCLG-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.ACTHTG-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.CLG.HTG-CMD a brick:Command .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.COM-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.DPR-CMD a brick:Damper_Command .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.HTGVLV-CMD a brick:Valve_Command .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.SA-FLOW a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.SA-T a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.SAFLOW-STPT a brick:Supply_Air_Flow_Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.WC-ADJ a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N23.ZN-T a brick:Zone .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.ACTCLG-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.ACTHTG-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.CLG.HTG-CMD a brick:Command .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.COM-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.DPR-CMD a brick:Damper_Command .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.HTGVLV-CMD a brick:Valve_Command .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.SA-FLOW a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.SA-T a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.SAFLOW-STPT a brick:Supply_Air_Flow_Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.WC-ADJ a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1242.VAV-1N24.ZN-T a brick:Zone .
+
+bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.ACTCLG-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.ACTHTG-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.CLG.HTG-CMD a brick:Command .
+
+bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.COM-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.DPR-CMD a brick:Damper_Command .
+
+bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.HTGVLV-CMD a brick:Valve_Command .
+
+bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.SA-FLOW a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.SA-T a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.SAFLOW-STPT a brick:Supply_Air_Flow_Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.WC-ADJ a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1243.VAV-1N26.ZN-T a brick:Zone .
+
+bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.ACTCLG-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.ACTHTG-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.CLG.HTG-CMD a brick:Command .
+
+bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.COM-STPT a brick:Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.DPR-CMD a brick:Damper_Command .
+
+bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.HTGVLV-CMD a brick:Valve_Command .
+
+bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.SA-FLOW a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.SA-T a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.SAFLOW-STPT a brick:Supply_Air_Flow_Setpoint .
+
+bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.WC-ADJ a brick:Point .
+
+bldg:EBU3B.1ST-FLR.RM-1244.VAV-1N25.ZN-T a brick:Zone .
+
+bldg:RM-1200B a brick:HVAC_Zone .
+
+bldg:RM-1241 a brick:HVAC_Zone .
+
+bldg:RM-1243 a brick:HVAC_Zone .
+
+bldg:RM-1244 a brick:HVAC_Zone .
+
+bldg:RM-1242 a brick:HVAC_Zone .
+
+bldg:AHU_1ST-FLR a brick:AHU .
+
