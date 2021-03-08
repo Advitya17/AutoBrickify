@@ -24,7 +24,7 @@ def run(action_arg):
         if not os.path.isdir('../brick-builder/brick-builder') \
         and not os.path.isdir('../reconciliation-api'):
             run('env-setup')
-            run('brickify')
+        run('brickify')
 
     elif action_arg == 'brickify':
         from src.execute import automatic_OR
