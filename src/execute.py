@@ -29,7 +29,7 @@ pd.set_option('display.max_columns', None)
 
 
 def validate_plf(point_label_format):
-    # TODO: some assumptions may need to be validated
+    # some assumptions may need to be validated
 
     # assert all(cn in repr(point_label_col) for c in col_list), 'all column names are not utilized!'
     # assert len(point_label_col) == len(Schema.col_list), 'specified column names are not unique!'
@@ -111,7 +111,6 @@ def automatic_OR():
 #         "jci_name": { "pattern": ".", "regex": false, "point_label_format": 
 #                      [null, "UpstreamAHU", "ZoneName", "VAVName", "BrickClass"] }
 #     },
-    # TODO LOGIC & REFACTORING !!
 
     # INFO: naming conventions followed in column names
     validate_plf(point_label_format)
@@ -136,7 +135,7 @@ def automatic_OR():
         for rep_col in replications[key]:
             df[rep_col] = df[key]
     
-    # except: # TODO: find out error type
+    # except: # then get error type
     #     print('Number of columns not matching number of words separated from the \
     #     point labels with the specified delimiter')
     df = df.drop(Schema.temp_col, axis=1)
@@ -151,7 +150,7 @@ def automatic_OR():
 
     df = df.dropna() if drop_null_rows else df
 
-    # needed ??
+    # sanity check
     df[Schema.ahu_col] = Schema.ahu_prefix + df[Schema.ahu_col].str.replace(Schema.ahu_prefix[:-1].lower(),
                                                                             '').replace(Schema.ahu_prefix[:-1], '')
     df[Schema.vav_col] = Schema.vav_prefix + df[Schema.vav_col].str.replace(Schema.vav_prefix[:-1].lower(),
