@@ -1,4 +1,3 @@
-from abbrmap import abbrmap as tagmap # TODO: change this to original recon API
 import os
 import sys
 import re
@@ -49,6 +48,7 @@ def recon_api_inference(q):
     - properties: optional map of property idents to values
     - type_strict: [any, all, should] for strictness on the types returned
     """
+    from abbrmap import abbrmap as tagmap # to avoid issues while running clean target
     # limit = int(q.get('limit', 10))
     # break query up into potential tags
     tags = map(str.lower, re.split(r'[.:\-_ ]', q))
@@ -78,5 +78,5 @@ def recon_api_inference(q):
 
 
 def clean_extra_contents():
-    os.system('rm -rf ../brick-builder ../reconciliation-api abbrmap.py')
+    os.system('rm -rf ../brick-builder ../reconciliation-api abbrmap.py output.ttl test/testdata/table_999_v1_processed.csv')
     # os.system('rm -rf src/building_depot data plot logs ./config/sensor_uuids.json')
