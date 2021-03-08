@@ -21,8 +21,10 @@ def run(action_arg):
         print('Requirements installed!')
 
     elif action_arg == 'all' or action_arg == 'test':
-        run('env-setup')
-        run('brickify')
+        if not os.path.isdir('../brick-builder/brick-builder') \
+        and not os.path.isdir('../reconciliation-api'):
+            run('env-setup')
+            run('brickify')
 
     elif action_arg == 'brickify':
         from src.execute import automatic_OR
