@@ -1,6 +1,6 @@
 # AutoBrick: A system for end-to-end automation of building point labels to Brick turtle files
 
-![alt text](https://github.com/Advitya17/AutoBrickify/blob/main/workflow.png?raw=true)
+![alt text](https://github.com/Advitya17/AutoBrickify/blob/main/autobrick_workflow.png?raw=true)
 
 ## Setup
 
