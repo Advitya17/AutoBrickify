@@ -21,7 +21,7 @@ def run(action_arg):
         print('Requirements installed!')
 
     elif action_arg == 'all' or action_arg == 'test':
-        if not os.path.isdir('../brick-builder/brick-builder') \
+        if not os.path.isdir('../brick-builder') \
         and not os.path.isdir('../reconciliation-api'):
             run('env-setup')
         run('brickify')
