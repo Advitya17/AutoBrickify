@@ -56,7 +56,7 @@ def recon_api_inference(q):
     brick_tags = flatten([tagmap.get(tag.lower(), [tag]) for tag in tags])
     brick_tags = list(filter(lambda x: x != '', brick_tags))
 
-    # TODO: Do I really need this?
+    # not needed at this time
     # if q.get('type') == 'PointClass':
     #     brick_tags += ['Point']
     # elif q.get('type') == 'EquipmentClass':
