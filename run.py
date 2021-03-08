@@ -9,7 +9,7 @@ sys.path.append('./src')
 
 
 def run(action_arg):
-    """Utilized later"""
+    """Runs the tool"""
 
     if action_arg == 'clean':
         from src.utils import clean_extra_contents
